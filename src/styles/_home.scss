@@ -1,0 +1,324 @@
+@use "./variables" as *;
+
+.frontend {
+  width: 100%;
+  background-color: black;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .blur {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: $black;
+  }
+}
+
+/* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
+@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .blur {
+    background-image: $black-gradient;
+  }
+}
+.section {
+  padding: 4rem 2rem 3rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  @media (min-width: $mobile-breakpoint) {
+    padding: 8rem 12.5rem 6rem;
+    .section-title {
+      font-size: 3rem;
+    }
+  }
+}
+
+.photo-section {
+  position: relative;
+  display: flex;
+  min-height: 800px;
+  background-image: url("../../public/snow.jpg");
+  background-repeat: no-repeat;
+  justify-content: center;
+  gap: 4rem;
+  align-items: center;
+  background-size: cover;
+  width: 100%;
+
+  flex-direction: column;
+  h1 {
+    padding: 1rem 4rem;
+    border-radius: $border-radius;
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: white;
+    span {
+      font-weight: 700;
+    }
+  }
+  p {
+    border-radius: $border-radius;
+    padding: 1.2rem 2rem;
+    text-align: center;
+    width: 100%;
+    font-weight: 400;
+    font-size: 2rem;
+    color: white;
+  }
+
+  img {
+    height: auto;
+    max-width: max(50%, 40rem);
+  }
+
+  @media (min-width: $mobile-breakpoint) {
+    background-position: center center;
+    height: 975px;
+
+    h1 {
+      font-size: $h1-desktop;
+    }
+
+    p {
+      font-size: 3rem;
+      width: 50%;
+    }
+    img {
+      width: min(60%, 30rem);
+    }
+  }
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    bottom: -5px;
+    left: 0;
+  }
+}
+
+.introduction-section {
+  background-color: $secondary;
+  position: relative;
+  background-image: url(../../public/wood3.jpg);
+  background-position: 50% 30%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .divider {
+    display: flex;
+    margin-bottom: 3rem;
+    justify-content: space-around;
+    flex-direction: column;
+    padding-inline: 1%;
+  }
+
+  .text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 2rem 0.75rem;
+    border-radius: 5px;
+    flex-basis: 100%;
+    svg {
+      flex-grow: 0;
+      flex-shrink: 0;
+      path {
+        fill: white;
+      }
+    }
+
+    .title {
+      font-size: 1.6rem;
+      flex-grow: 0;
+      color: $white;
+    }
+    p {
+      color: $white;
+      font-size: $p-mobile;
+      line-height: 1.25;
+      font-weight: 400;
+      flex-basis: 100%;
+    }
+  }
+  .section-title {
+    color: white;
+  }
+
+  .cta {
+    border: none;
+    background-color: white;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: min(90%, 15rem);
+    font-size: 1.4rem;
+  }
+
+  .cta:hover {
+    cursor: pointer;
+    background-color: black;
+    color: $white;
+  }
+
+  @media (min-width: $mobile-breakpoint) {
+    .divider {
+      flex-direction: row;
+      grid-gap: 1rem;
+    }
+    .text-block {
+      padding-inline: 2rem;
+      .title {
+        font-size: 1.75rem;
+      }
+      p {
+        font-size: 1.4rem;
+      }
+    }
+    .cta {
+      padding: 0.75rem 1.5rem;
+    }
+  }
+}
+.about-me {
+  justify-content: flex-start;
+  background-image: url("../../public/email-pattern.png");
+  background-repeat: repeat;
+  background-size: 25%;
+  .section-title {
+    color: $neutral-02;
+
+    &::before {
+      background-color: $neutral-01;
+    }
+  }
+  .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      font-size: 1.3rem;
+      color: $neutral-02;
+      max-width: 40rem;
+      margin: 2rem 0;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+  .questionaire {
+    margin: 2rem auto;
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+
+  .question-card {
+    padding: 1.2rem 1rem 2rem;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: $primary;
+    justify-content: space-around;
+    border-radius: $border-radius;
+    max-width: 30rem;
+
+    .title {
+      font-family: "Revalia", cursive;
+      font-size: 1.3rem;
+    }
+    .content {
+      margin: 1rem auto 2rem;
+      font-size: 1.3rem;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      width: 70%;
+      height: 1px;
+      background-color: $neutral-02;
+      bottom: 20%;
+      left: 50%;
+      transform: translate(-50%, 100%);
+    }
+    button {
+      position: absolute;
+      background-image: url("../../public/arrow.svg");
+      background-repeat: no-repeat;
+      border: none;
+      background-color: transparent;
+      width: 36px;
+      height: 31px;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.2);
+
+      &:hover {
+        background-image: url("../../public/arrow-active.svg");
+        cursor: pointer;
+      }
+    }
+  }
+  @media (min-width: $mobile-breakpoint) {
+    padding-inline: 20%;
+    .section-title {
+      align-self: flex-start;
+    }
+    .description {
+      flex-direction: row;
+      width: 100%;
+      grid-gap: 2rem;
+      justify-content: space-between;
+      p {
+        text-align: start;
+        font-size: 1.5rem;
+        flex: 1 1 60%;
+        max-width: 100%;
+      }
+      img {
+        align-self: flex-start;
+        flex: 1 1 10%;
+      }
+    }
+    .questionaire {
+      h2 {
+        font-size: 2rem;
+      }
+    }
+    .question-card {
+      max-width: 37rem;
+      padding: 2rem 2rem 3rem;
+
+      .title {
+        font-size: 1.6rem;
+      }
+      .content {
+        font-size: 1.5rem;
+      }
+      button {
+        transform: translate(-50%, -50%) scale(1.75);
+      }
+    }
+  }
+}

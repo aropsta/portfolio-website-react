@@ -1,0 +1,29 @@
+$primary: hsl(48, 100%, 50%);
+$white: rgba(255, 255, 255, 0.9);
+$black: rgba(0, 0, 0, 0.5);
+
+$secondary: hsl(174, 38%, 85%);
+$neutral-01: hsl(187, 10%, 35%);
+$neutral-02: hsl(186, 9%, 22%);
+
+$header-height: 5rem;
+
+$mobile-breakpoint: 55rem;
+$border-radius: 3px;
+
+$black-gradient: radial-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7));
+
+.asda {
+  background-image: radial-gradient();
+}
+// -------------- Typography---------------------//
+
+$h1-desktop: 3rem;
+$h2-desktop: 2rem;
+$h3-desktop: 1.5rem;
+$p-desktop: 1.3rem;
+$hero-mobile: 2rem;
+$h1-mobile: 1.75rem;
+$h2-mobile: 1.125rem;
+
+$p-mobile: 1.3em;

@@ -1,0 +1,8 @@
+@use "./variables" as *;
+
+section {
+  width: 100%;
+  height: 6rem;
+  background-color: black;
+  color: $primary;
+}

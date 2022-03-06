@@ -1,0 +1,9 @@
+@use "./index.scss";
+@forward "./variables";
+
+.App {
+  display: flex;
+  position: relative;
+
+  width: 100%;
+}
