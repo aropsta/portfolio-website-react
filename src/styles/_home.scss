@@ -121,7 +121,10 @@
     margin-bottom: 3rem;
     justify-content: space-around;
     flex-direction: column;
-    padding-inline: 1%;
+    flex-wrap: wrap;
+    > * {
+      flex: 1 1 128px;
+    }
   }
 
   .text-block {
@@ -133,7 +136,6 @@
     margin-bottom: 1rem;
     padding: 2rem 0.75rem;
     border-radius: 5px;
-    flex-basis: 100%;
     svg {
       flex-grow: 0;
       flex-shrink: 0;
@@ -179,6 +181,7 @@
   }
 
   @media (min-width: $mobile-breakpoint) {
+    padding: 8rem min(12.5%, 16rem) 6rem;
     .divider {
       flex-direction: row;
       grid-gap: 1rem;
@@ -205,6 +208,7 @@
   .section-title {
     color: $neutral-02;
 
+    margin-bottom: 2rem;
     &::before {
       background-color: $neutral-01;
     }
