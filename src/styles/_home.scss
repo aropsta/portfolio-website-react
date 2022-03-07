@@ -1,16 +1,18 @@
 @use "./variables" as *;
 
-.frontend {
-  width: 100%;
-  background-color: black;
-}
-
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
   .blur {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     background-color: $black;
   }
+}
+a:hover,
+a:focus,
+a:active,
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
@@ -81,7 +83,7 @@
     }
 
     p {
-      font-size: 3rem;
+      font-size: 2.25rem;
       width: 50%;
     }
     img {
@@ -120,10 +122,11 @@
     display: flex;
     margin-bottom: 3rem;
     justify-content: space-around;
+    padding: 1rem 2.5%;
     flex-direction: column;
     flex-wrap: wrap;
     > * {
-      flex: 1 1 128px;
+      flex: 1 1 300px;
     }
   }
 
@@ -160,7 +163,6 @@
   .section-title {
     color: white;
   }
-
   .cta {
     border: none;
     background-color: white;
@@ -218,7 +220,7 @@
     flex-direction: column;
     align-items: center;
     p {
-      font-size: 1.3rem;
+      font-size: $p-mobile;
       color: $neutral-02;
       max-width: 40rem;
       margin: 2rem 0;
@@ -230,10 +232,13 @@
   }
   .questionaire {
     margin: 2rem auto;
-    h2 {
+    .section-title {
       margin-bottom: 1rem;
-      font-size: 1.5rem;
+      font-size: 2rem;
       text-align: center;
+      &::before {
+        display: none;
+      }
     }
   }
 
@@ -323,6 +328,67 @@
       button {
         transform: translate(-50%, -50%) scale(1.75);
       }
+    }
+  }
+}
+
+.my-work {
+  background-image: url(../../public/beach.jpg);
+  .section-title {
+    color: $primary;
+    margin-bottom: 1.5rem;
+    &::before {
+      display: none;
+    }
+  }
+  p {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 2rem;
+  }
+
+  ul {
+    margin: 2rem 0;
+    li {
+      list-style: none;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .cta {
+    border: none;
+    background-color: white;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: min(60%, 12rem);
+    font-size: 1.4rem;
+  }
+
+  .cta:hover {
+    cursor: pointer;
+    background-color: black;
+    color: $white;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  padding: 2rem 2rem;
+  svg path {
+    fill: white;
+  }
+  a:hover {
+    svg path {
+      transform: scale(1.1);
+      transform-origin: center;
     }
   }
 }
