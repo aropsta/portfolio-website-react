@@ -36,14 +36,6 @@ export default function CaseStudy() {
     if (breakPoint === "small") return <br />;
   };
 
-  let closeOverlay = (overlayDiv: HTMLDivElement) => {
-    //document.body.classList.remove("disable-scroll");
-    document.getElementById("root")?.classList.remove("disable-scroll");
-    let img = document.getElementById("img");
-    overlayDiv?.parentNode?.removeChild(overlayDiv);
-    img?.parentNode?.removeChild(img);
-  };
-
   let expandImage = (event: React.MouseEvent, src: String | null) => {
     event.preventDefault();
 
@@ -51,8 +43,9 @@ export default function CaseStudy() {
     if (!document.getElementById("overlay")) {
       //  document.body.classList.add("disable-scroll");
 
+      //disable scroll  behaviour for body and root
       document.getElementById("root")?.classList.add("disable-scroll");
-      //imgClick called
+      document.body.classList.add("disable-scroll");
 
       //create and add overlay
       let overlay = document.createElement("div");
@@ -64,36 +57,32 @@ export default function CaseStudy() {
       //create and add image
 
       overlay.onclick = () => {
-        closeOverlay(overlay);
+        closeOverlay();
       };
 
       document.body.appendChild(overlay);
+      //add dark backgroud to overlay
       document.getElementById("overlay")?.classList.add("blur");
 
       let img = document.createElement("img");
       img.src = src as string;
       img.setAttribute("id", "img");
-
       // set tabindex, for focus
       img.setAttribute("tabindex", "-1");
-
       // style image
-      img.setAttribute("class", "overlayimg");
-
       // IE7
       // img.className = "overlayimg";
 
-      //close overlay on click
       img.onclick = () => {
-        closeOverlay(overlay);
+        closeOverlay();
       };
 
       img.addEventListener("keydown", (event) => {
         let key = event.key;
 
         if (document.getElementById("overlay")) {
-          if (key === "Escape" || key === " ") {
-            closeOverlay(overlay);
+          if (key === "Escape" || key === "Enter") {
+            closeOverlay();
           }
         }
       });
@@ -102,6 +91,15 @@ export default function CaseStudy() {
 
       // focus on image in overlay
       img.focus();
+
+      let closeOverlay = () => {
+        //document.body.classList.remove("disable-scroll");
+        document.getElementById("root")?.classList.remove("disable-scroll");
+        document.body.classList.remove("disable-scroll");
+        let img = document.getElementById("img");
+        overlay?.parentNode?.removeChild(overlay);
+        img?.parentNode?.removeChild(img);
+      };
     }
   };
 

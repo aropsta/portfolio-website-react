@@ -6,16 +6,12 @@
 
 html {
   font-family: "Rubik", sans-serif;
-  scroll-behavior: smooth;
-}
-
-body {
-  position: relative;
 }
 
 body,
 #root,
 html,
 .App {
+  position: relative;
   height: 100%;
 }
