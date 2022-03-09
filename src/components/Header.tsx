@@ -28,8 +28,8 @@ const MenuItems = [
 ];
 
 const breakPoints = {
-  small: "(max-width:800px)",
-  desktop: "(min-width:800px)",
+  small: "(max-width:880px)",
+  desktop: "(min-width:880px)",
 };
 
 export default function Header() {
