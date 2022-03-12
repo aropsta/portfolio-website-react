@@ -12,17 +12,17 @@ const MenuItems = [
   },
   {
     title: "My work",
-    url: "my-work",
+    url: "/my-work",
     cName: "nav-links",
   },
   {
     title: "Case study",
-    url: "case-study",
+    url: "/case-study",
     cName: "nav-links",
   },
   {
     title: "Contact",
-    url: "contact",
+    url: "/contact",
     cName: "nav-links",
   },
 ];
@@ -40,12 +40,25 @@ export default function Header() {
     breakPointObserver(breakPoints, isBreakPoint);
   }, [breakPoint]);
 
+  document.body.addEventListener("onlcick", () => {
+    console.log("CLicked!: ");
+    closeMobileMenu();
+  });
+
   const closeMobileMenu = () => {
     setClick(false);
   };
 
   const menuClick = () => {
     setClick(!click);
+  };
+
+  const toggleScroll = (a: boolean) => {
+    if (a) {
+      document.body.classList.add("disable-scroll");
+    } else {
+      document.body.classList.remove("disable-scroll");
+    }
   };
 
   let addBlurBackground = () => {
@@ -75,7 +88,10 @@ export default function Header() {
       </ul>
       <menu className="menu-icon" onClick={menuClick}>
         <li>
-          <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
+          <i
+            className={
+              click ? `fas fa-times ${toggleScroll(true)} ` : `fas fa-bars ${toggleScroll(false)}}`
+            }></i>
         </li>
       </menu>
     </nav>

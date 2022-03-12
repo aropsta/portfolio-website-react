@@ -7,17 +7,9 @@
     background-color: $black;
   }
 }
-a:hover,
-a:focus,
-a:active,
-a {
-  text-decoration: none;
-  color: inherit;
-}
 
 html {
   scroll-behavior: smooth;
-  overflow-y: scroll;
 }
 
 /* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
@@ -178,6 +170,8 @@ html {
     align-items: center;
     width: min(90%, 15rem);
     font-size: 1.4rem;
+    text-decoration: none;
+    color: inherit;
   }
 
   .cta:hover {
@@ -256,6 +250,7 @@ html {
     justify-content: space-around;
     border-radius: $border-radius;
     max-width: 30rem;
+    min-height: 17rem;
 
     .title {
       font-family: "Revalia", cursive;
@@ -264,6 +259,7 @@ html {
     .content {
       margin: 1rem auto 2rem;
       font-size: 1.3rem;
+      flex: 1 1 100%;
     }
     &::before {
       position: absolute;
@@ -371,6 +367,8 @@ html {
     align-items: center;
     width: min(60%, 12rem);
     font-size: 1.4rem;
+    text-decoration: none;
+    color: inherit;
   }
 
   .cta:hover {

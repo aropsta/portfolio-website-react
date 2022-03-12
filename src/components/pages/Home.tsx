@@ -38,13 +38,6 @@ function Home() {
     breakPointObserver(breakPoints, isBreakPoint);
   }, [breakPoint]);
 
-  let getTitle = () => {
-    return quotes[quoteIndex].title;
-  };
-  let getContent = () => {
-    return quotes[quoteIndex].content;
-  };
-
   let nextQuote = () => {
     console.log("Passing: " + quoteIndex);
     if (quoteIndex < quotes.length - 1) {
@@ -154,8 +147,8 @@ function Home() {
           <h3 className="section-title">What I think of...</h3>
 
           <article className="question-card">
-            <p className="title">{getTitle()}</p>
-            <p className="content">"{getContent()}"</p>
+            <p className="title">{quotes[quoteIndex].title}</p>
+            <p className="content">"{quotes[quoteIndex].content}"</p>
             <button onClick={nextQuote}></button>
           </article>
         </section>

@@ -2,10 +2,17 @@ import "../../styles/_case-study.scss";
 import breakPointObserver from "../../breakPointObserver";
 import React, { useEffect, useState } from "react";
 
+import caseStudyReport from "../../case-study.json";
+
 const breakPoints = {
   small: "(max-width:880px)",
+
+  laptop: "(min-width:880px and max-width:1000px",
   desktop: "(min-width:880px)",
 };
+
+let oldDesign = caseStudyReport["oldDesign"];
+let newDesign = caseStudyReport["newDesign"];
 
 export default function CaseStudy() {
   const [breakPoint, isBreakPoint] = useState();
@@ -36,6 +43,20 @@ export default function CaseStudy() {
     if (breakPoint === "small") return <br />;
   };
 
+  let getBtnImg = (src: string) => {
+    return (
+      <button
+        data-larger={src}
+        className="img-btn"
+        aria-label="Click to enlarge image"
+        onClick={(e) => {
+          expandImage(e, src);
+        }}>
+        <img src={src} alt="Old design of the home page" />
+      </button>
+    );
+  };
+
   let expandImage = (event: React.MouseEvent, src: String | null) => {
     event.preventDefault();
 
@@ -44,7 +65,7 @@ export default function CaseStudy() {
       //  document.body.classList.add("disable-scroll");
 
       //disable scroll  behaviour for body and root
-      document.getElementById("root")?.classList.add("disable-scroll");
+      //document.getElementById("root")?.classList.add("disable-scroll");
       document.body.classList.add("disable-scroll");
 
       //create and add overlay
@@ -94,7 +115,6 @@ export default function CaseStudy() {
 
       let closeOverlay = () => {
         //document.body.classList.remove("disable-scroll");
-        document.getElementById("root")?.classList.remove("disable-scroll");
         document.body.classList.remove("disable-scroll");
         let img = document.getElementById("img");
         overlay?.parentNode?.removeChild(overlay);
@@ -106,50 +126,239 @@ export default function CaseStudy() {
   return (
     <>
       <h1 className="main-title">Code project | website redesign</h1>
+
       <section className="overview study-section">
-        {getImg("top")};<h2 className="section-title">Overview</h2>
+        {getImg("top")};<h2 className="section-title">{oldDesign.overview.title}</h2>
         <p className="section-content">
-          CodeProject is a community for users to view, create and interact with articles on various
-          technology and software.
+          {oldDesign.overview.p1}
           {returnBreak()}
           <br />
-          The aim of this project is to bring this decade-old site up to date with modern UI design
-          principles.
+          {oldDesign.overview.p2}
           <br />
-          <br />A cluttered interface, lack of consistent scaling and many other questionable design
-          decisions is what we are set to resolve.
+          {returnBreak()}
+          {oldDesign.overview.p3}
         </p>
         {getImg("bottom")}
       </section>
+
       <section className="study-section analysis">
-        <h2 className="section-title">Analysis - The old design</h2>
-        <button
-          data-larger="./analysis.png"
-          className="img-btn"
-          aria-label="Click to enlarge image"
-          onClick={(e) => {
-            expandImage(e, "./analysis.png");
-          }}>
-          <img src="./analysis.png" alt="Old design of the home page" />
-        </button>
+        <h2 className="section-title">{oldDesign.analysis.title}</h2>
+        {getBtnImg("./analysis.png")}
         <p className="section-content">
-          One of the first things to stand out to a UI designer would be the contrast, or the lack
-          there of. Much of the typography has a similiar styling in terms of weight and colour.
+          {oldDesign.analysis.p1}
           <br />
           <br />
-          The old design correctly used scale and colour to help users discern the visual hierarchy
-          on the page. This falls short however and doesn’t provide enough contrast between the
-          different elements on the page. An improvment on the design could be incorporating
-          different font weights. More details will be provided in the redesign.
+          {oldDesign.analysis.p2}
           <br />
           <br />
-          In terms of visual heirarchy and colour, the old design seems tolerable and may be given a
-          pass. The use of whitespace is also apparent and provides acceptable clarity for the
-          content of the page. However a great deal is neglected when we consider contrast,
-          typographic and content scaling.
+          {oldDesign.analysis.p3}
           <br />
           <br />
-          Let's break things down by section
+          {oldDesign.analysis.p4}
+        </p>
+      </section>
+
+      <section className="study-section article-title">
+        <h2 className="section-title">{oldDesign.articleTitle.title}</h2>
+        <p className="section-content">{oldDesign.articleTitle.p1}</p>
+      </section>
+
+      <section className="study-section ">
+        <h2 className="section-title">{oldDesign.authorSection.title}</h2>
+        {getBtnImg("./author-section.png")}
+        <p className="section-content">
+          {oldDesign.authorSection.p1}
+          <br />
+          <br />
+          {oldDesign.authorSection.p2}
+          <br />
+          <br />
+        </p>
+        {getBtnImg("./about-the-author.png")}
+        <p>
+          {oldDesign.authorSection.p3}
+          <br />
+          <br />
+          {oldDesign.authorSection.p4}
+          <br />
+          <br />
+          {oldDesign.authorSection.p5}
+          <br />
+          <br />
+          {oldDesign.authorSection.p6}
+          <br />
+          <br />
+          {oldDesign.authorSection.p7}
+          <br />
+          <br />
+          {oldDesign.authorSection.p8}
+        </p>
+      </section>
+
+      <section className="study-section body">
+        <h2 className="section-title">{oldDesign.body.title}</h2>
+        {getBtnImg("./body.png")}
+        <p className="section-content">
+          {oldDesign.body.p1}
+          <br />
+          <br />
+          {oldDesign.body.p2}
+          <br />
+          <br />
+          {oldDesign.body.p3}
+        </p>
+      </section>
+
+      <section className="study-section comments">
+        <h2 className="section-title">{oldDesign.comments.title}</h2>
+        <p className="section-content">{oldDesign.analysis.p1}</p>
+        {getBtnImg("./comments.png")}
+        <p>
+          {oldDesign.comments.p2}
+          <br />
+          <br />
+          {oldDesign.comments.p3}
+          <br />
+          <br />
+          {oldDesign.comments.p4}
+          <br />
+          <br />
+          {oldDesign.comments.p5}
+          <br />
+          <br />
+          {oldDesign.comments.p6}
+          <br />
+          <br />
+          {oldDesign.comments.p7}
+          {oldDesign.comments.p8}
+          <br />
+          <br />
+          {oldDesign.comments.p9}
+          <br />
+          <br />
+          {oldDesign.comments.p10}
+        </p>
+      </section>
+
+      <section className="study-section article-aside">
+        <h2 className="section-title">{oldDesign.aside.title}</h2>
+        <p className="section-content">
+          {oldDesign.aside.p1}
+          <br />
+          <br />
+          {oldDesign.aside.p2}
+        </p>
+
+        {getBtnImg("./aside.png")}
+      </section>
+
+      <section className="study-section article-footer">
+        <h2 className="section-title">{oldDesign.footer.title}</h2>
+        <p className="section-content">
+          {oldDesign.footer.p1}
+          <br />
+          <br />
+          {oldDesign.footer.p2}
+          <br />
+          <br />
+          {oldDesign.footer.p3}
+        </p>
+        {getBtnImg("./footer.png")}
+        <p>
+          <br />
+          {oldDesign.footer.p4}
+        </p>
+      </section>
+
+      <h2 className="improved">
+        <span className="sr-only">The improved design</span>codeproject.com
+      </h2>
+
+      {getBtnImg("./newdesign-1.png")}
+      {getBtnImg("./newdesign-2.png")}
+      {getBtnImg("./newdesign-3.png")}
+      <section className="study-section ">
+        <h2 className="section-title">{oldDesign.articleTitle.title}</h2>
+        {getBtnImg("./analysis.png")}
+        <p className="section-content">
+          {oldDesign.analysis.p1}
+          <br />
+          <br />
+          {oldDesign.analysis.p2}
+          <br />
+          <br />
+          {oldDesign.analysis.p3}
+          <br />
+          <br />
+          {oldDesign.analysis.p4}
+        </p>
+      </section>
+
+      <section className="study-section ">
+        <h2 className="section-title">{oldDesign.articleTitle.title}</h2>
+        {getBtnImg("./analysis.png")}
+        <p className="section-content">
+          {oldDesign.analysis.p1}
+          <br />
+          <br />
+          {oldDesign.analysis.p2}
+          <br />
+          <br />
+          {oldDesign.analysis.p3}
+          <br />
+          <br />
+          {oldDesign.analysis.p4}
+        </p>
+      </section>
+
+      <section className="study-section ">
+        <h2 className="section-title">{oldDesign.articleTitle.title}</h2>
+        {getBtnImg("./analysis.png")}
+        <p className="section-content">
+          {oldDesign.analysis.p1}
+          <br />
+          <br />
+          {oldDesign.analysis.p2}
+          <br />
+          <br />
+          {oldDesign.analysis.p3}
+          <br />
+          <br />
+          {oldDesign.analysis.p4}
+        </p>
+      </section>
+
+      <section className="study-section ">
+        <h2 className="section-title">{oldDesign.articleTitle.title}</h2>
+        {getBtnImg("./analysis.png")}
+        <p className="section-content">
+          {oldDesign.analysis.p1}
+          <br />
+          <br />
+          {oldDesign.analysis.p2}
+          <br />
+          <br />
+          {oldDesign.analysis.p3}
+          <br />
+          <br />
+          {oldDesign.analysis.p4}
+        </p>
+      </section>
+
+      <section className="study-section ">
+        <h2 className="section-title">{oldDesign.articleTitle.title}</h2>
+        {getBtnImg("./analysis.png")}
+        <p className="section-content">
+          {oldDesign.analysis.p1}
+          <br />
+          <br />
+          {oldDesign.analysis.p2}
+          <br />
+          <br />
+          {oldDesign.analysis.p3}
+          <br />
+          <br />
+          {oldDesign.analysis.p4}
         </p>
       </section>
     </>

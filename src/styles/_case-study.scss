@@ -16,6 +16,11 @@
     font-size: $p-mobile;
   }
 
+  img {
+    width: 100%;
+    height: auto;
+  }
+
   @media (min-width: $mobile-breakpoint) {
     padding: 6rem min(12.5%, 16rem) 6rem;
     .section-title {
@@ -23,6 +28,10 @@
     }
     .section-content {
       font-size: $p-desktop;
+    }
+    img {
+      height: 100%;
+      width: auto;
     }
   }
 }
@@ -126,6 +135,7 @@
   img {
     width: 100%;
     height: auto;
+    margin-block-end: 1rem;
   }
 
   @media (min-width: $mobile-breakpoint) {
@@ -135,13 +145,13 @@
 }
 
 .disable-scroll {
-  overflow: hidden;
+  overflow-y: hidden;
+  height: 100vh;
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
-  overflow: hidden;
   left: 0;
   display: flex;
   justify-content: center;
@@ -151,8 +161,19 @@
   z-index: 1;
 
   img {
-    z-index: 3;
-    object-fit: contain;
+    z-index: 2;
     transform: scale(0.9);
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+  }
+  @media (min-width: $mobile-breakpoint) {
+  }
+}
+
+.article-aside {
+  img {
+    height: 100%;
+    width: auto;
   }
 }
