@@ -111,10 +111,10 @@ export default function MyWork() {
             })}
           </span>
         </section>
-        <a href={galleryItems[active].site}>
+        <a href={galleryItems[active].site} target="_black" rel="noopener noreferrer">
           website <img src="./external-link.svg" alt="new window" width={16} height={16} />
         </a>
-        <a href={galleryItems[active].code}>
+        <a href={galleryItems[active].code} target="_black" rel="noopener noreferrer">
           code <img src="./external-link.svg" alt="new window" width={16} height={16} />
         </a>
       </main>

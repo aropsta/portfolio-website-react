@@ -1,6 +1,6 @@
 import "../../styles/_case-study.scss";
 import breakPointObserver from "../../breakPointObserver";
-import React, { useEffect, useState } from "react";
+import React, { FormEvent, FormEventHandler, useEffect, useState } from "react";
 
 import caseStudyReport from "../../case-study.json";
 
@@ -143,8 +143,19 @@ export default function CaseStudy() {
       return <></>;
     } else
       return (
-        <button onClick={backToTop} className="back-to-top">
-          <img src="./chevron-circle-up.svg" alt="Back to top" />
+        <button aria-label="Back to top" onClick={backToTop} className="back-to-top">
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            width="64"
+            height="64"
+            viewBox="0 0 1792 1792"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill="#516163"
+              d="M1293 1139l102-102q19-19 19-45t-19-45l-454-454q-19-19-45-19t-45 19l-454 454q-19 19-19 45t19 45l102 102q19 19 45 19t45-19l307-307 307 307q19 19 45 19t45-19zm371-243q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"
+            />
+          </svg>
         </button>
       );
   };
@@ -161,12 +172,25 @@ export default function CaseStudy() {
     } else return <></>;
   };
 
+  const imageComparison = () => {
+    return (
+      <>
+        <div id="slider" className="beer-slider" data-beer-label="before">
+          <img src="./old-design.png" alt="" />
+          <div className="beer-reveal" data-beer-label="after">
+            <img src="new-design.png" alt="" />
+          </div>
+        </div>
+      </>
+    );
+  };
+
   let contentsCloseBtn = () => {
     if (breakPoint === "small")
       return (
         <button
           aria-label="Close Table of contents"
-          onClick={() => setContents(false)}
+          onClick={closeContents}
           className={`${contentsVisible ? "btn-hide" : "btn-show"}`}>
           <svg
             aria-hidden="true"

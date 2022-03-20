@@ -1,9 +1,8 @@
-import { getByTitle } from "@testing-library/react";
-import React, { RefObject, useEffect, useState } from "react";
-import breakPointObserver from "../../breakPointObserver";
+import React, { FormEvent, RefObject, useEffect, useRef, useState } from "react";
 import "../../styles/_home.scss";
-import Header from "../Header";
-import Contact from "./Contact";
+import breakPointObserver from "../../breakPointObserver";
+import emailjs from "@emailjs/browser";
+import { init } from "@emailjs/browser";
 
 let quotes = [
   {
@@ -53,14 +52,27 @@ const breakPoints = {
 };
 
 function Home() {
+  emailjs.init("vRPeubQbjqke4IyjA");
   let [quoteIndex, setIndex] = useState(0);
   const [breakPoint, isBreakPoint] = useState();
+
+  const initialFormState = { name: "", email: "", phone: "", company: "", msg: "" };
+  const [formValues, setFormValues] = useState(initialFormState);
+  const [formErrors, setFormErrors] = useState(initialFormState);
+  const [submitted, setSubmit] = useState(false);
+  const [validForm, setFormValid] = useState(false);
+
   useEffect(() => {
     breakPointObserver(breakPoints, isBreakPoint);
   }, [breakPoint]);
 
+  useEffect(() => {
+    if (validForm && submitted) {
+      console.log(formValues);
+    }
+  }, [formErrors]);
+
   let nextQuote = () => {
-    console.log("Passing: " + quoteIndex);
     if (quoteIndex < quotes.length - 1) {
       return setIndex((previous) => previous + 1);
     } else setIndex(0);
@@ -76,13 +88,68 @@ function Home() {
       case "bottom": {
         if (breakPoint === "small") return <></>;
         else return <img src="./portrait.jpg" alt="" />;
-
-        break;
       }
     }
     if (breakPoint === "small") {
       return <img src="./portrait.jpg" alt="" />;
     }
+  };
+
+  let sendEmail = (e: FormEvent) => {
+    e.preventDefault();
+    setSubmit(true);
+
+    setFormErrors(validateForm(formValues));
+  };
+
+  const send = () => {
+    emailjs.send("service_jg9eb2q", "template_73aayf3", formValues, "vRPeubQbjqke4IyjA").then(
+      (response) => {
+        console.log("SUCCESS", response);
+      },
+      (error) => {
+        console.log("FAILED...", error);
+      }
+    );
+  };
+
+  const validateForm = (values: {
+    name: string;
+    email: string;
+    phone: string;
+    company: string;
+    msg: string;
+  }) => {
+    const errors: { name: string; email: string; phone: string; company: string; msg: string } = {
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+      msg: "",
+    };
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+
+    if (values.name === "") {
+      errors.name = "Name is requred";
+      setFormValid(false);
+    } else setFormValid(true);
+
+    if (values.email === "") {
+      errors.email = "Email is requred";
+      setFormValid(false);
+    } else setFormValid(true);
+    if (values.msg === "") {
+      errors.msg = "A message is requred";
+      setFormValid(false);
+    } else setFormValid(true);
+
+    return errors;
+  };
+
+  const formChange = (e: FormEvent) => {
+    const input = (e.target as HTMLInputElement) || HTMLTextAreaElement;
+    const { id, value } = input;
+    setFormValues({ ...formValues, [id]: value });
   };
 
   return (
@@ -119,6 +186,7 @@ function Home() {
               Javascript, semnatic and accessible HTML, css <b>and much more</b> (refer to resume)
             </p>
           </section>
+
           <section className="text-block card blur">
             <svg width="69" height="64" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
               <path d="M832 896q0-106-75-181t-181-75-181 75-75 181 75 181 181 75 181-75 75-181zm768 512q0-52-38-90t-90-38-90 38-38 90q0 53 37.5 90.5t90.5 37.5 90.5-37.5 37.5-90.5zm0-1024q0-52-38-90t-90-38-90 38-38 90q0 53 37.5 90.5t90.5 37.5 90.5-37.5 37.5-90.5zm-384 421v185q0 10-7 19.5t-16 10.5l-155 24q-11 35-32 76 34 48 90 115 7 10 7 20 0 12-7 19-23 30-82.5 89.5t-78.5 59.5q-11 0-21-7l-115-90q-37 19-77 31-11 108-23 155-7 24-30 24h-186q-11 0-20-7.5t-10-17.5l-23-153q-34-10-75-31l-118 89q-7 7-20 7-11 0-21-8-144-133-144-160 0-9 7-19 10-14 41-53t47-61q-23-44-35-82l-152-24q-10-1-17-9.5t-7-19.5v-185q0-10 7-19.5t16-10.5l155-24q11-35 32-76-34-48-90-115-7-11-7-20 0-12 7-20 22-30 82-89t79-59q11 0 21 7l115 90q34-18 77-32 11-108 23-154 7-24 30-24h186q11 0 20 7.5t10 17.5l23 153q34 10 75 31l118-89q8-7 20-7 11 0 21 8 144 133 144 160 0 9-7 19-12 16-42 54t-45 60q23 48 34 82l152 23q10 2 17 10.5t7 19.5zm640 533v140q0 16-149 31-12 27-30 52 51 113 51 138 0 4-4 7-122 71-124 71-8 0-46-47t-52-68q-20 2-30 2t-30-2q-14 21-52 68t-46 47q-2 0-124-71-4-3-4-7 0-25 51-138-18-25-30-52-149-15-149-31v-140q0-16 149-31 13-29 30-52-51-113-51-138 0-4 4-7 4-2 35-20t59-34 30-16q8 0 46 46.5t52 67.5q20-2 30-2t30 2q51-71 92-112l6-2q4 0 124 70 4 3 4 7 0 25-51 138 17 23 30 52 149 15 149 31zm0-1024v140q0 16-149 31-12 27-30 52 51 113 51 138 0 4-4 7-122 71-124 71-8 0-46-47t-52-68q-20 2-30 2t-30-2q-14 21-52 68t-46 47q-2 0-124-71-4-3-4-7 0-25 51-138-18-25-30-52-149-15-149-31v-140q0-16 149-31 13-29 30-52-51-113-51-138 0-4 4-7 4-2 35-20t59-34 30-16q8 0 46 46.5t52 67.5q20-2 30-2t30 2q51-71 92-112l6-2q4 0 124 70 4 3 4 7 0 25-51 138 17 23 30 52 149 15 149 31z" />
@@ -129,6 +197,7 @@ function Home() {
               and escalte/inquire when required. All according to project outcomes
             </p>
           </section>
+
           <section className="text-block card blur">
             <svg width="64" height="64" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
               <path d="M529 896q-162 5-265 128h-134q-82 0-138-40.5t-56-118.5q0-353 124-353 6 0 43.5 21t97.5 42.5 119 21.5q67 0 133-23-5 37-5 66 0 139 81 256zm1071 637q0 120-73 189.5t-194 69.5h-874q-121 0-194-69.5t-73-189.5q0-53 3.5-103.5t14-109 26.5-108.5 43-97.5 62-81 85.5-53.5 111.5-20q10 0 43 21.5t73 48 107 48 135 21.5 135-21.5 107-48 73-48 43-21.5q61 0 111.5 20t85.5 53.5 62 81 43 97.5 26.5 108.5 14 109 3.5 103.5zm-1024-1277q0 106-75 181t-181 75-181-75-75-181 75-181 181-75 181 75 75 181zm704 384q0 159-112.5 271.5t-271.5 112.5-271.5-112.5-112.5-271.5 112.5-271.5 271.5-112.5 271.5 112.5 112.5 271.5zm576 225q0 78-56 118.5t-138 40.5h-134q-103-123-265-128 81-117 81-256 0-29-5-66 66 23 133 23 59 0 119-21.5t97.5-42.5 43.5-21q124 0 124 353zm-128-609q0 106-75 181t-181 75-181-75-75-181 75-181 181-75 181 75 75 181z" />
@@ -196,50 +265,95 @@ function Home() {
       </section>
 
       <section id="contact" className="contact">
-        <form action="/">
-          <h2 aria-description="Contact me">Get in touch</h2>
+        {/*<pre>{JSON.stringify(formValues, undefined, 2)}</pre>*/}
+        <form onSubmit={(e) => sendEmail(e)} action="/">
+          {validForm && submitted ? <p className="sent">Sent successfully!</p> : <></>}
+          {validForm && submitted ? send() : <></>}
+          <h2 aria-label="Contact me">Get in touch</h2>
           <p>
-            Required fields are followed by <abbr title="required">*.</abbr>
+            Required fields are followed by <abbr title="required">*</abbr>
           </p>
+          <p className="error">{formErrors.name}</p>
           <div className="list-item">
             <label htmlFor="name">
               Name
-              <abbr title="required" aria-label="required">
+              <abbr title="Full Name" aria-label="required">
                 *
               </abbr>
             </label>
-            <input id="name" type="text" />
+            <input
+              id="name"
+              name="name"
+              type="text"
+              value={formValues.name}
+              onChange={(e) => {
+                formChange(e);
+              }}
+            />
           </div>
 
           <div className="phone">
+            <p className="error">{formErrors.email}</p>
             <div className="last-div list-item">
               <label htmlFor="email">
                 Email
-                <abbr title="required" aria-label="required">
+                <abbr title="Email" aria-label="required">
                   *
                 </abbr>
               </label>
-              <input id="email" type="email" />
+              <input
+                id="email"
+                name="email"
+                type="email"
+                value={formValues.email}
+                onChange={(e) => {
+                  formChange(e);
+                }}
+              />
             </div>
             <div className="first-div list-item">
               <label htmlFor="phone">Phone</label>
-              <input id="phone" type="tel" />
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                value={formValues.phone}
+                onChange={(e) => {
+                  formChange(e);
+                }}
+              />
             </div>
           </div>
 
           <div className="list-item">
             <label htmlFor="company">Company</label>
-            <input id="company" type="text" />
+            <input
+              id="company"
+              name="company"
+              type="text"
+              value={formValues.company}
+              onChange={(e) => {
+                formChange(e);
+              }}
+            />
           </div>
 
+          <p className="error">{formErrors.msg}</p>
           <div className="list-item">
             <label htmlFor="msg">
               Message
-              <abbr title="required" aria-label="required">
+              <abbr title="Your message" aria-label="required">
                 *
               </abbr>
             </label>
-            <textarea id="msg" />
+            <textarea
+              id="msg"
+              name="msg"
+              value={formValues.msg}
+              onChange={(e) => {
+                formChange(e);
+              }}
+            />
           </div>
           <button type="submit">Send</button>
         </form>

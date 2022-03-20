@@ -38,16 +38,16 @@ main {
   position: relative;
   .tbc {
     position: fixed;
-    left: 1px;
+    left: 0;
     //text-orientation: upright;
-    vertical-align: top;
-    writing-mode: vertical-rl;
-    rotate: 180deg;
-    padding: 2rem 0.2rem;
-    background-color: black;
+    // vertical-align: top;
+    //writing-mode: vertical-rl;
+    transform: rotate(-90deg) translateY(-330%);
+    padding: 0.2rem 2rem;
+    background-color: $neutral-02;
     color: white;
     cursor: pointer;
-    z-index: 10;
+    z-index: 1;
     border: none;
     border-radius: 3px;
     top: 50vh;
@@ -109,9 +109,27 @@ main {
   &.show {
     position: fixed;
     left: 0;
+    width: 100%;
     top: $header-height;
-    padding-top: 3rem;
+    padding-top: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 0;
     top: 0;
+
+    h2 {
+    }
+    ul {
+    }
+    .title {
+      font-size: 1.5rem;
+    }
+    .title-contents {
+      font-size: 2rem;
+    }
+
+    .sub-title {
+      font-size: 1.4rem;
+    }
   }
   .title {
     font-size: $h3-desktop;
@@ -183,12 +201,9 @@ main {
   border: none;
   background-color: transparent;
   position: sticky;
-  bottom: 10%;
-  right: 0;
-  width: 64px;
-  height: 54px;
+  bottom: 5%;
   align-self: flex-end;
-  margin-right: min(12.5%, 16rem);
+  right: min(12.5%, 16rem);
   background-repeat: no-repeat;
 
   img {
@@ -198,9 +213,18 @@ main {
     height: 100%;
     z-index: 2;
   }
+  @media (min-width: $mobile-breakpoint) {
+    img {
+      width: 75%;
+      height: 75%;
+    }
+  }
 
   &:hover {
     cursor: pointer;
+    svg path {
+      fill: $primary;
+    }
     img {
     }
   }
@@ -564,4 +588,85 @@ main {
   }
 }
 footer {
+}
+
+// image compariotor
+
+.c-compare {
+  --h: 9;
+  --m: 1rem 0;
+  --w: 16;
+  --thumb-bgc: red;
+  --thumb-bgc-focus: hsla(0, 70%, 70%, 0.7);
+  --thumb-w: 1rem;
+  --value: 50%;
+
+  margin: var(--m);
+  position: relative;
+}
+.c-compare::after {
+  content: "";
+  display: block;
+  padding-bottom: calc((var(--h) / var(--w)) * 100%);
+}
+.c-compare__left,
+.c-compare__right {
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+}
+.c-compare__left {
+  clip-path: polygon(0% 0%, var(--value) 0%, var(--value) 100%, 0% 100%);
+}
+.c-compare__right {
+  clip-path: polygon(100% 0%, var(--value) 0%, var(--value) 100%, 100% 100%);
+}
+.c-compare__range {
+  background-color: transparent;
+  box-sizing: border-box;
+  font-family: inherit;
+  height: 100%;
+  margin: 0;
+  outline: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.c-compare__range::-moz-range-thumb {
+  background-color: var(--thumb-bgc);
+  cursor: ew-resize;
+  height: 100%;
+  width: var(--thumb-w);
+}
+.c-compare__range::-webkit-slider-thumb {
+  background-color: var(--thumb-bgc);
+  cursor: ew-resize;
+  height: 100%;
+  width: var(--thumb-w);
+}
+.c-compare__range:focus::-webkit-slider-thumb {
+  background-color: var(--thumb-bgc-focus);
+  box-shadow: 0 0 0 3px var(--thumb-bgc);
+}
+.c-compare__range:focus::-moz-range-thumb {
+  background-color: var(--thumb-bgc-focus);
+  box-shadow: 0 0 0 3px var(--thumb-bgc);
+}
+.c-compare__range::-moz-range-track {
+  background: transparent;
+  background-size: 100%;
+  box-sizing: border-box;
+}
+.c-compare__range::-webkit-slider-runnable-track {
+  background: transparent;
+  background-size: 100%;
+  box-sizing: border-box;
+  height: 100%;
+}
+.c-compare__range,
+.c-compare__range::-webkit-slider-runnable-track,
+.c-compare__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
 }

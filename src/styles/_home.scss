@@ -393,6 +393,10 @@ html {
   align-items: center;
   padding: 4rem 2rem;
   width: 100%;
+  abbr {
+    text-decoration: none;
+    color: $primary;
+  }
 
   button {
     border: none;
@@ -424,6 +428,22 @@ html {
     label {
       display: flex;
       grid-gap: 0.1rem;
+    }
+    .error {
+      align-self: flex-start;
+      color: firebrick;
+    }
+
+    .sent {
+      background-color: greenyellow;
+      padding: 0.5rem 4rem;
+      border-radius: 5px;
+      position: absolute;
+      font-weight: 500;
+      top: 0;
+      transform: translate(0, -150%);
+      align-self: center;
+      text-align: center;
     }
 
     .list-item {
