@@ -90,7 +90,7 @@
       "p2": "Attempting to create a new design from scratch in your design software can be an excessive waste of time.",
       "p3": "Pen and paper are fast and the approximation is sufficient for our needs.",
       "p4": "At this stage a general layout is what we require and we can go from there in adding further detail.",
-      "p11": "Yes, I know the logo looks kinda funny :-)"
+      "p5": "Yes, I know the logo looks kinda funny :-)"
     },
     "navigation": {
       "title": "navigation and header",
@@ -105,17 +105,7 @@
       "title": "article header",
       "p1": "No more is the large author header above the article. It has been trimmed down its bare essentials: the author, and published date. All excess information has been moved down to the bottom of the article in a new section, called 'About the author'. This is a standard section present in most types of article sites.",
       "p2": "It's not present in the wireframe, but we have also opted to add the miscellaneous information from the aside to this same area. Refer to the final design.",
-      "p3": "All clickable links, including all of the tags were given an underline to express their 'clickableness'. Where they are not links, the underlines were removed in place of regular text formatting.",
-      "p4": "",
-      "p5": "",
-      "p6": "",
-      "p7": "",
-      "p8": "",
-      "p9": "",
-      "p10": "",
-      "p11": "",
-      "p12": "",
-      "p13": ""
+      "p3": "All clickable links, including all of the tags were given an underline to express their 'clickableness'. Where they are not links, the underlines were removed in place of regular text formatting."
     },
     "body": {
       "title": "body",

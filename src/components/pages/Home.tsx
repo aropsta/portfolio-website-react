@@ -1,29 +1,50 @@
 import { getByTitle } from "@testing-library/react";
-import React, { useEffect, useState } from "react";
+import React, { RefObject, useEffect, useState } from "react";
 import breakPointObserver from "../../breakPointObserver";
 import "../../styles/_home.scss";
 import Header from "../Header";
+import Contact from "./Contact";
 
 let quotes = [
   {
     title: "code",
     content:
-      "It is easy to sit up and take notice, what’s difficult is getting up adn taking action",
+      "Should be legible and functional first and foremost. Then performant and concise second",
   },
   {
-    title: "bro",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem veritatis illum quam sequi praesentium totam necessitatibus impedit eveniet quisquam itaque.",
+    title: "C/C++",
+    content: "My first and most favourite programming languages",
   },
   {
-    title: "kent",
-    content:
-      "It is easy to sit up and take notice, what’s difficult is getting up adn taking action",
+    title: "food",
+    content: "LOVE sweets. Hate chilli. Everything else is the same to me",
   },
   {
-    title: "meant",
+    title: "my weakness",
+    content: "A perfectionist attitute toward things. Can slow down my progress",
+  },
+  {
+    title: "my strength",
     content:
-      "It is easy to sit up and take notice, what’s difficult is getting up adn taking action",
+      "Perserverance. Once a decision is made, it will be seen through to its end...Most of the time",
+  },
+  {
+    title: "music",
+    content:
+      "I played the flute in high school. Can also play piano. Study and work have made me put it away for now. I miss it",
+  },
+  {
+    title: "strawberries",
+    content: "I used to think it was the most overrated fruit. That title now belongs to cherries",
+  },
+  {
+    title: "myself",
+    content:
+      "I try my best not to pretend. I would like to speak my mind as often as I get the chance",
+  },
+  {
+    title: "Linux",
+    content: "I use arch btw",
   },
 ];
 const breakPoints = {
@@ -63,6 +84,7 @@ function Home() {
       return <img src="./portrait.jpg" alt="" />;
     }
   };
+
   return (
     <>
       <section className="photo-section">
@@ -159,18 +181,68 @@ function Home() {
         <p>A sample of my web projects</p>
         <ul>
           <li>
-            <img src="./desktop-design.jpg" alt="" />
+            <img src="./my-work/base-apparel.jpg" alt="" />
           </li>
           <li>
-            <img src="./desktop-design2.jpg" alt="" />
+            <img src="./my-work/tip-calculator.jpg" alt="" />
           </li>
           <li>
-            <img src="./desktop-design3.jpg" alt="" />
+            <img src="./my-work/time-tracking.jpg" alt="" />
           </li>
         </ul>
         <a className="cta" href="/my-work">
           view more
         </a>
+      </section>
+
+      <section id="contact" className="contact">
+        <form action="/">
+          <h2 aria-description="Contact me">Get in touch</h2>
+          <p>
+            Required fields are followed by <abbr title="required">*.</abbr>
+          </p>
+          <div className="list-item">
+            <label htmlFor="name">
+              Name
+              <abbr title="required" aria-label="required">
+                *
+              </abbr>
+            </label>
+            <input id="name" type="text" />
+          </div>
+
+          <div className="phone">
+            <div className="last-div list-item">
+              <label htmlFor="email">
+                Email
+                <abbr title="required" aria-label="required">
+                  *
+                </abbr>
+              </label>
+              <input id="email" type="email" />
+            </div>
+            <div className="first-div list-item">
+              <label htmlFor="phone">Phone</label>
+              <input id="phone" type="tel" />
+            </div>
+          </div>
+
+          <div className="list-item">
+            <label htmlFor="company">Company</label>
+            <input id="company" type="text" />
+          </div>
+
+          <div className="list-item">
+            <label htmlFor="msg">
+              Message
+              <abbr title="required" aria-label="required">
+                *
+              </abbr>
+            </label>
+            <textarea id="msg" />
+          </div>
+          <button type="submit">Send</button>
+        </form>
       </section>
 
       <footer>

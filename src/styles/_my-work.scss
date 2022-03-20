@@ -10,14 +10,17 @@
 
   background-image: url(../../public/beach.jpg);
   background-repeat: no-repeat;
-  background-position: 50% 95%;
+  background-position: 50% 100%;
   background-size: cover;
 
   header {
     width: 100%;
     background-color: white;
     color: black;
+    display: flex;
+    flex-direction: column;
     padding: 1rem 2.5rem;
+    grid-gap: 0.5rem;
 
     @media (min-width: $mobile-breakpoint) {
       padding: 2rem min(12.5%, 16rem) 3rem;
@@ -62,17 +65,40 @@
     &:active {
       color: inherit;
     }
+    @media (min-width: $mobile-breakpoint) {
+      img {
+      }
+    }
   }
 
   .image-gallery {
     display: flex;
     flex-direction: column;
-    width: 99%;
+    width: min(95%, 80rem);
+    margin-top: 5rem;
     align-self: center;
 
-    margin-top: 4rem;
     z-index: 0;
     position: relative;
+
+    .counter {
+      display: flex;
+      position: absolute;
+      right: 50%;
+      bottom: 5%;
+      transform: translateX(50%);
+
+      svg {
+        cursor: pointer;
+        width: 16px;
+        height: 16px;
+      }
+      svg:hover {
+        path {
+          fill: $primary;
+        }
+      }
+    }
 
     button {
       position: absolute;
@@ -83,19 +109,12 @@
       background-repeat: no-repeat;
       background-color: transparent;
       height: 51.75px;
-      width: 42.75px;
+      width: 38px;
+      flex: 1 1 100%;
       cursor: pointer;
 
       &:hover {
         background-image: url(../../public/next-mobile-hover.svg);
-      }
-      @media (min-width: $mobile-breakpoint) {
-        height: 69px;
-        width: 57px;
-        background-image: url(../../public/next.svg);
-        &:hover {
-          background-image: url(../../public/next-hover.svg);
-        }
       }
     }
 
@@ -109,8 +128,31 @@
       top: 50%;
       right: 0.5rem;
     }
+    @media (min-width: $mobile-breakpoint) {
+      img {
+        object-fit: contain;
+        width: 100%;
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: auto;
+      }
+      button {
+        height: 69px;
+        width: 57px;
+        background-image: url(../../public/next.svg);
+        &:hover {
+          background-image: url(../../public/next-hover.svg);
+        }
+      }
 
-    img {
+      .counter {
+        bottom: 5%;
+        svg {
+          cursor: pointer;
+          width: 24px;
+          height: 24px;
+        }
+      }
     }
   }
 }

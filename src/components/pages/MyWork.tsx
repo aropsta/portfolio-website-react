@@ -1,3 +1,4 @@
+import { getDiffieHellman } from "crypto";
 import React, { useState } from "react";
 import "../../styles/_my-work.scss";
 
@@ -6,51 +7,53 @@ let galleryItems = [
     tite: "base apparel",
     site: "base apparel",
     code: "base apparel",
-    src: "./desktop-design.jpg",
+    src: "./my-work/base-apparel.jpg",
   },
   {
     tite: "time tracking dashboard",
-    site: "base apparel",
-    code: "base apparel",
-    src: "./desktop-design3.jpg",
+    site: "https://61f3836f34bc9a0007fbbacf--jolly-hopper-43a522.netlify.app/",
+    code: "https://github.com/aropsta/time-tracking-dashboard-main",
+    src: "./my-work/time-tracking.jpg",
   },
   {
     tite: "tip calculator",
     site: "",
     code: "",
-    src: "./desktop-design2.jpg",
+    src: "./my-work/tip-calculator.jpg",
   },
   {
     tite: "four-card feature section",
-    site: "base apparel",
-    code: "base apparel",
-    src: "./",
+    site: "https://aropsta.github.io/four-card-feature-section-master/",
+    code: "https://github.com/aropsta/four-card-feature-section-master",
+    src: "./my-work/four-card.jpg",
   },
   {
     tite: "three-column preview card",
-    site: "base apparel",
-    code: "base apparel",
-    src: "./",
+    site: "https://aropsta.github.io/3-column-preview-card-component-main/",
+    code: "https://github.com/aropsta/3-column-preview-card-component-main",
+    src: "./my-work/three-column.jpg",
   },
   {
     tite: "single price grid component",
-    site: "base apparel",
-    code: "base apparel",
-    src: "./",
+    site: "https://aropsta.github.io/single-price-grid-component-master/",
+    code: "https://github.com/aropsta/single-price-grid-component-master",
+    src: "./my-work/single-price.jpg",
   },
   {
     tite: "order summary component",
-    site: "base apparel",
-    code: "base apparel",
-    src: "./",
+    site: "https://aropsta.github.io/order-summary-component-main/",
+    code: "https://github.com/aropsta/order-summary-component-main",
+    src: "./my-work/order-summary.jpg",
   },
   {
     tite: "social proof section",
     site: "base apparel",
     code: "base apparel",
-    src: "./",
+    src: "./my-work/social-proof.jpg",
   },
 ];
+
+let counter = [0, 1, 2, 3, 4, 5, 6, 7];
 export default function MyWork() {
   const [active, setActiveSite] = useState(0);
 
@@ -64,6 +67,15 @@ export default function MyWork() {
     if (active > 0) {
       return setActiveSite((previous) => previous - 1);
     } else setActiveSite(galleryItems.length - 1);
+  };
+
+  let getFillColour = (index: number) => {
+    if (active === index) return "#ffcc00";
+    else return "#000000";
+  };
+
+  let counterClick = (index: number) => {
+    setActiveSite(index);
   };
   return (
     <>
@@ -81,6 +93,23 @@ export default function MyWork() {
 
           <button onClick={nextGalleryItem} className="next"></button>
           <button onClick={prevGalleryItem} className="prev"></button>
+          <span className="counter">
+            {counter.map((item, index) => {
+              return (
+                <svg
+                  onClick={() => counterClick(index)}
+                  width="24"
+                  height="24"
+                  viewBox="0 0 1792 1792"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill={getFillColour(index)}
+                    d="M1664 896q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"
+                  />
+                </svg>
+              );
+            })}
+          </span>
         </section>
         <a href={galleryItems[active].site}>
           website <img src="./external-link.svg" alt="new window" width={16} height={16} />

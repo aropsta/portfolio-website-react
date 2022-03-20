@@ -43,7 +43,8 @@ html {
     }
   }
   @media (min-width: $mobile-breakpoint) {
-    padding: 8rem 12.5rem 6rem;
+    padding: 6rem min(12.5%, 16rem) 4rem;
+    // padding: 6rem 12.5rem 6rem;
     .section-title {
       font-size: 3rem;
     }
@@ -146,10 +147,10 @@ html {
     .title {
       font-size: 1.6rem;
       flex-grow: 0;
-      color: $white;
+      color: white;
     }
     p {
-      color: $white;
+      color: white;
       font-size: $p-mobile;
       line-height: 1.25;
       font-weight: 400;
@@ -181,7 +182,6 @@ html {
   }
 
   @media (min-width: $mobile-breakpoint) {
-    padding: 8rem min(12.5%, 16rem) 6rem;
     .divider {
       flex-direction: row;
       grid-gap: 1rem;
@@ -200,6 +200,7 @@ html {
     }
   }
 }
+
 .about-me {
   justify-content: flex-start;
   background-image: url("../../public/email-pattern.png");
@@ -379,6 +380,101 @@ html {
   @media (min-width: $mobile-breakpoint) {
     p {
       font-size: 1.75rem;
+    }
+  }
+}
+
+.contact {
+  background-image: url(../../public/light-wood.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  width: 100%;
+
+  button {
+    border: none;
+    background-color: $primary;
+    font-weight: 500;
+    padding: 0.5em 3em;
+    border-radius: 3px;
+    align-self: center;
+    align-items: center;
+
+    &:hover {
+      cursor: pointer;
+      background-color: hsl(48, 100, 70);
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    width: min(30rem, 100%);
+    padding: 2rem 2rem;
+    filter: drop-shadow(10px 5px 10px rgba(0, 0, 0, 0.2));
+    h2 {
+      align-self: center;
+    }
+    grid-gap: 1rem;
+
+    label {
+      display: flex;
+      grid-gap: 0.1rem;
+    }
+
+    .list-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+
+      input {
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        width: 100%;
+        &:focus {
+          outline: none;
+          border-bottom: 1px solid $primary;
+        }
+      }
+    }
+    .phone {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      grid-gap: 1rem;
+      width: 100%;
+
+      .first-div {
+        width: 100%;
+      }
+      .last-div {
+        width: 100%;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      margin-top: 0.5rem;
+      &:focus {
+        outline: none;
+        outline: 1px solid $primary;
+      }
+    }
+  }
+
+  @media (min-width: $mobile-breakpoint) {
+    padding: 4rem;
+    form {
+      width: min(40rem, 50%);
+    }
+    .phone {
+      flex-direction: row;
     }
   }
 }
