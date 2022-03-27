@@ -1,0 +1,141 @@
+@use "./variables" as *;
+
+.error {
+  font-size: 12px;
+  padding: 3px;
+  color: firebrick;
+  display: none;
+}
+
+input:invalid[focused="true"] {
+  border: 1px solid firebrick;
+}
+
+input:invalid[focused="true"] ~ .error {
+  display: block;
+}
+
+.contact {
+  background-image: url(../../public/light-wood.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  width: 100%;
+  abbr {
+    text-decoration: none;
+    color: $primary;
+  }
+
+  button {
+    border: none;
+    background-color: $primary;
+    font-weight: 500;
+    padding: 0.5em 3em;
+    border-radius: 3px;
+    align-self: center;
+    align-items: center;
+
+    &:hover {
+      cursor: pointer;
+      background-color: hsl(48, 100, 70);
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    width: min(30rem, 100%);
+    padding: 2rem 2rem;
+    filter: drop-shadow(10px 5px 10px rgba(0, 0, 0, 0.2));
+    h2 {
+      align-self: center;
+      font-size: 1.75rem;
+    }
+    grid-gap: 1rem;
+
+    label {
+      display: flex;
+      grid-gap: 0.1rem;
+    }
+
+    .sent {
+      background-color: greenyellow;
+      padding: 0.5rem 4rem;
+      border-radius: 5px;
+      position: absolute;
+      font-weight: 500;
+      top: 0;
+      transform: translate(0, -150%);
+      align-self: center;
+      text-align: center;
+    }
+
+    .input-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+
+      input {
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        width: 100%;
+        &::placeholder {
+          color: rgba(0, 0, 0, 0.2);
+        }
+        &:focus {
+          outline: none;
+          border-bottom: 1px solid $primary;
+        }
+      }
+    }
+    // .phone {
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    //   flex-direction: column;
+    //   grid-gap: 1rem;
+    //   width: 100%;
+
+    //   .first-div {
+    //     width: 100%;
+    //   }
+    //   .last-div {
+    //     width: 100%;
+    //   }
+    // }
+
+    textarea {
+      resize: vertical;
+      margin-top: 0.5rem;
+      border: none;
+      padding: 0.5rem;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      &:focus {
+        outline: none;
+        outline: 1px solid $primary;
+      }
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.2);
+      }
+    }
+    @media (max-width: 280px) {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: $mobile-breakpoint) {
+    padding: 4rem;
+    form {
+      width: min(40rem, 50%);
+    }
+    .phone {
+      flex-direction: row;
+    }
+  }
+}

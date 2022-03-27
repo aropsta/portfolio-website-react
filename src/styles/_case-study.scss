@@ -1,12 +1,14 @@
 @use "./variables" as *;
+@import "./_my-work.scss";
 
 .study-section {
   display: flex;
   flex-direction: column;
-  padding: 2.5rem 2rem 3rem;
+  padding: 0rem 2rem 3rem;
 
   .section-title {
     color: $primary;
+    padding-top: 2.5rem;
     font-weight: 700;
     font-size: $h2-mobile;
     margin-bottom: 1rem;
@@ -14,6 +16,7 @@
 
   .section-content {
     font-size: $p-mobile;
+    padding-block: 1rem;
   }
 
   img {
@@ -23,9 +26,10 @@
   }
 
   @media (min-width: $mobile-breakpoint) {
-    padding: 4rem min(12.5%, 16rem) 2rem;
+    padding: 0rem min(12.5%, 16rem) 2rem;
     .section-title {
       font-size: $h2-desktop;
+      padding-top: 4rem;
     }
     .section-content {
       font-size: $p-desktop;
@@ -103,7 +107,7 @@ main {
 
   &.hidden {
     position: absolute;
-    left: -100%;
+    left: -150%;
   }
 
   &.show {
@@ -206,17 +210,15 @@ main {
   right: min(12.5%, 16rem);
   background-repeat: no-repeat;
 
-  img {
-    object-fit: contain;
-
-    width: 100%;
-    height: 100%;
+  svg {
+    width: 56px;
+    height: 56px;
     z-index: 2;
   }
   @media (min-width: $mobile-breakpoint) {
-    img {
-      width: 75%;
-      height: 75%;
+    svg {
+      width: 64px;
+      height: 64px;
     }
   }
 
@@ -349,7 +351,7 @@ main {
     height: auto;
     height: 100%;
     object-fit: cover;
-    margin-bottom: 1rem;
+    margin-block: 1rem;
   }
   @media (min-width: $mobile-breakpoint) {
     img {
@@ -587,86 +589,107 @@ main {
   @media (min-width: $mobile-breakpoint) {
   }
 }
-footer {
-}
 
-// image compariotor
-
-.c-compare {
-  --h: 9;
-  --m: 1rem 0;
-  --w: 16;
-  --thumb-bgc: red;
-  --thumb-bgc-focus: hsla(0, 70%, 70%, 0.7);
-  --thumb-w: 1rem;
-  --value: 50%;
-
-  margin: var(--m);
+.img-compare {
+  align-self: center;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 87%;
+  margin-block: 2rem;
+  overflow: hidden;
+  align-self: center;
+  @media (min-width: $mobile-breakpoint) {
+  }
+
+  .wrapper {
+    filter: drop-shadow(-1px 1px 0 $neutral-02);
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  .img1 {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    border: none;
+  }
+
+  .img2 {
+    display: block;
+    width: 100%;
+    object-position: center;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    border: none;
+    top: 0;
+    --exposure: 50%;
+
+    clip-path: polygon(
+      calc(var(--exposure) + 1px) 0,
+      100% 0,
+      100% 100%,
+      calc(var(--exposure) + 1px) 100%
+    );
+  }
+
+  input {
+    --thumb-size: clamp(2em, 2vmin, 2em);
+    margin: 0 calc(var(--thumb-size) / -2);
+    width: calc(100% + var(--thumb-size));
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    background: none;
+    cursor: col-resize;
+    @media (min-width: $mobile-breakpoint) {
+      --thumb-size: clamp(3em, 5vmin, 5em);
+      margin: 0 calc(var(--thumb-size) / -2);
+      width: calc(100% + var(--thumb-size));
+    }
+
+    //firefox
+    &::-moz-range-thumb {
+      background-image: url(../../public/thumb.svg);
+      background-color: transparent;
+      background-size: 100%;
+      border-radius: 50%;
+      border: none;
+      width: var(--thumb-size);
+      height: var(--thumb-size);
+    }
+    &:focus::-moz-range-thumb {
+      /* thumb focus styles */
+    }
+
+    /* Chrome, Safari and Edge, */
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      background-image: url(../../public/thumb.svg);
+      background-color: transparent;
+      background-size: 100%;
+      border-radius: 50%;
+      border: none;
+      width: var(--thumb-size);
+      height: var(--thumb-size);
+    }
+
+    &:focus::-webkit-slider-thumb {
+      /* thumb focus styles */
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    align-items: stretch;
+    display: flex;
+  }
 }
-.c-compare::after {
-  content: "";
-  display: block;
-  padding-bottom: calc((var(--h) / var(--w)) * 100%);
-}
-.c-compare__left,
-.c-compare__right {
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  width: 100%;
-}
-.c-compare__left {
-  clip-path: polygon(0% 0%, var(--value) 0%, var(--value) 100%, 0% 100%);
-}
-.c-compare__right {
-  clip-path: polygon(100% 0%, var(--value) 0%, var(--value) 100%, 100% 100%);
-}
-.c-compare__range {
-  background-color: transparent;
-  box-sizing: border-box;
-  font-family: inherit;
-  height: 100%;
-  margin: 0;
-  outline: none;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-.c-compare__range::-moz-range-thumb {
-  background-color: var(--thumb-bgc);
-  cursor: ew-resize;
-  height: 100%;
-  width: var(--thumb-w);
-}
-.c-compare__range::-webkit-slider-thumb {
-  background-color: var(--thumb-bgc);
-  cursor: ew-resize;
-  height: 100%;
-  width: var(--thumb-w);
-}
-.c-compare__range:focus::-webkit-slider-thumb {
-  background-color: var(--thumb-bgc-focus);
-  box-shadow: 0 0 0 3px var(--thumb-bgc);
-}
-.c-compare__range:focus::-moz-range-thumb {
-  background-color: var(--thumb-bgc-focus);
-  box-shadow: 0 0 0 3px var(--thumb-bgc);
-}
-.c-compare__range::-moz-range-track {
-  background: transparent;
-  background-size: 100%;
-  box-sizing: border-box;
-}
-.c-compare__range::-webkit-slider-runnable-track {
-  background: transparent;
-  background-size: 100%;
-  box-sizing: border-box;
-  height: 100%;
-}
-.c-compare__range,
-.c-compare__range::-webkit-slider-runnable-track,
-.c-compare__range::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-}
+// image compariotor

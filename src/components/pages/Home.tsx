@@ -1,8 +1,10 @@
-import React, { FormEvent, RefObject, useEffect, useRef, useState } from "react";
+import React, { FormEvent, RefObject, useEffect, useRef, useState, useCallback } from "react";
 import "../../styles/_home.scss";
 import breakPointObserver from "../../breakPointObserver";
-import emailjs from "@emailjs/browser";
 import { init } from "@emailjs/browser";
+
+import Form from "../Form";
+import FormInput from "../FormInput";
 
 let quotes = [
   {
@@ -52,25 +54,12 @@ const breakPoints = {
 };
 
 function Home() {
-  emailjs.init("vRPeubQbjqke4IyjA");
   let [quoteIndex, setIndex] = useState(0);
   const [breakPoint, isBreakPoint] = useState();
-
-  const initialFormState = { name: "", email: "", phone: "", company: "", msg: "" };
-  const [formValues, setFormValues] = useState(initialFormState);
-  const [formErrors, setFormErrors] = useState(initialFormState);
-  const [submitted, setSubmit] = useState(false);
-  const [validForm, setFormValid] = useState(false);
 
   useEffect(() => {
     breakPointObserver(breakPoints, isBreakPoint);
   }, [breakPoint]);
-
-  useEffect(() => {
-    if (validForm && submitted) {
-      console.log(formValues);
-    }
-  }, [formErrors]);
 
   let nextQuote = () => {
     if (quoteIndex < quotes.length - 1) {
@@ -93,63 +82,6 @@ function Home() {
     if (breakPoint === "small") {
       return <img src="./portrait.jpg" alt="" />;
     }
-  };
-
-  let sendEmail = (e: FormEvent) => {
-    e.preventDefault();
-    setSubmit(true);
-
-    setFormErrors(validateForm(formValues));
-  };
-
-  const send = () => {
-    emailjs.send("service_jg9eb2q", "template_73aayf3", formValues, "vRPeubQbjqke4IyjA").then(
-      (response) => {
-        console.log("SUCCESS", response);
-      },
-      (error) => {
-        console.log("FAILED...", error);
-      }
-    );
-  };
-
-  const validateForm = (values: {
-    name: string;
-    email: string;
-    phone: string;
-    company: string;
-    msg: string;
-  }) => {
-    const errors: { name: string; email: string; phone: string; company: string; msg: string } = {
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      msg: "",
-    };
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-
-    if (values.name === "") {
-      errors.name = "Name is requred";
-      setFormValid(false);
-    } else setFormValid(true);
-
-    if (values.email === "") {
-      errors.email = "Email is requred";
-      setFormValid(false);
-    } else setFormValid(true);
-    if (values.msg === "") {
-      errors.msg = "A message is requred";
-      setFormValid(false);
-    } else setFormValid(true);
-
-    return errors;
-  };
-
-  const formChange = (e: FormEvent) => {
-    const input = (e.target as HTMLInputElement) || HTMLTextAreaElement;
-    const { id, value } = input;
-    setFormValues({ ...formValues, [id]: value });
   };
 
   return (
@@ -265,98 +197,7 @@ function Home() {
       </section>
 
       <section id="contact" className="contact">
-        {/*<pre>{JSON.stringify(formValues, undefined, 2)}</pre>*/}
-        <form onSubmit={(e) => sendEmail(e)} action="/">
-          {validForm && submitted ? <p className="sent">Sent successfully!</p> : <></>}
-          {validForm && submitted ? send() : <></>}
-          <h2 aria-label="Contact me">Get in touch</h2>
-          <p>
-            Required fields are followed by <abbr title="required">*</abbr>
-          </p>
-          <p className="error">{formErrors.name}</p>
-          <div className="list-item">
-            <label htmlFor="name">
-              Name
-              <abbr title="Full Name" aria-label="required">
-                *
-              </abbr>
-            </label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              value={formValues.name}
-              onChange={(e) => {
-                formChange(e);
-              }}
-            />
-          </div>
-
-          <div className="phone">
-            <p className="error">{formErrors.email}</p>
-            <div className="last-div list-item">
-              <label htmlFor="email">
-                Email
-                <abbr title="Email" aria-label="required">
-                  *
-                </abbr>
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                value={formValues.email}
-                onChange={(e) => {
-                  formChange(e);
-                }}
-              />
-            </div>
-            <div className="first-div list-item">
-              <label htmlFor="phone">Phone</label>
-              <input
-                id="phone"
-                name="phone"
-                type="tel"
-                value={formValues.phone}
-                onChange={(e) => {
-                  formChange(e);
-                }}
-              />
-            </div>
-          </div>
-
-          <div className="list-item">
-            <label htmlFor="company">Company</label>
-            <input
-              id="company"
-              name="company"
-              type="text"
-              value={formValues.company}
-              onChange={(e) => {
-                formChange(e);
-              }}
-            />
-          </div>
-
-          <p className="error">{formErrors.msg}</p>
-          <div className="list-item">
-            <label htmlFor="msg">
-              Message
-              <abbr title="Your message" aria-label="required">
-                *
-              </abbr>
-            </label>
-            <textarea
-              id="msg"
-              name="msg"
-              value={formValues.msg}
-              onChange={(e) => {
-                formChange(e);
-              }}
-            />
-          </div>
-          <button type="submit">Send</button>
-        </form>
+        <Form></Form>
       </section>
 
       <footer>

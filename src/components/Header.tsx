@@ -42,7 +42,6 @@ export default function Header() {
   }, [breakPoint]);
 
   document.body.addEventListener("onlcick", () => {
-    console.log("CLicked!: ");
     closeMobileMenu();
   });
 

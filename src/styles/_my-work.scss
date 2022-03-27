@@ -70,7 +70,6 @@
       }
     }
   }
-
   .image-gallery {
     display: flex;
     flex-direction: column;
@@ -152,6 +151,93 @@
           width: 24px;
           height: 24px;
         }
+      }
+    }
+  }
+}
+.image-gallery2 {
+  display: flex;
+  flex-direction: column;
+  width: min(95%, 80rem);
+  align-self: center;
+
+  z-index: 0;
+  position: relative;
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  .counter {
+    display: flex;
+    position: absolute;
+    right: 50%;
+    bottom: 5%;
+    transform: translateX(50%);
+
+    svg {
+      cursor: pointer;
+      width: 16px;
+      height: 16px;
+    }
+    svg:hover {
+      path {
+        fill: $primary;
+      }
+    }
+  }
+
+  button {
+    position: absolute;
+    background-position: center;
+    background-size: contain;
+    background-image: url(../../public/next-mobile.svg);
+    border: none;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    height: 51.75px;
+    width: 38px;
+    flex: 1 1 100%;
+    cursor: pointer;
+
+    &:hover {
+      background-image: url(../../public/next-mobile-hover.svg);
+    }
+  }
+
+  .prev {
+    top: 50%;
+    left: 0.5rem;
+    transform: translateY(-50%);
+  }
+  .next {
+    transform: translateY(-50%) rotate(180deg);
+    top: 50%;
+    right: 0.5rem;
+  }
+  @media (min-width: $mobile-breakpoint) {
+    img {
+      object-fit: contain;
+      width: 100%;
+      flex-grow: 0;
+      flex-shrink: 0;
+      height: auto;
+    }
+    button {
+      height: 69px;
+      width: 57px;
+      background-image: url(../../public/next.svg);
+      &:hover {
+        background-image: url(../../public/next-hover.svg);
+      }
+    }
+
+    .counter {
+      bottom: 5%;
+      svg {
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
       }
     }
   }

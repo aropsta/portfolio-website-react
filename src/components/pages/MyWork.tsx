@@ -1,12 +1,11 @@
-import { getDiffieHellman } from "crypto";
 import React, { useState } from "react";
 import "../../styles/_my-work.scss";
 
 let galleryItems = [
   {
     tite: "base apparel",
-    site: "base apparel",
-    code: "base apparel",
+    site: "https://623c06ff2783f00009e0543c--naughty-visvesvaraya-8e9d40.netlify.app/",
+    code: "https://github.com/aropsta/base-apparel-coming-soon_react",
     src: "./my-work/base-apparel.jpg",
   },
   {
@@ -97,6 +96,7 @@ export default function MyWork() {
             {counter.map((item, index) => {
               return (
                 <svg
+                  key={index}
                   onClick={() => counterClick(index)}
                   width="24"
                   height="24"

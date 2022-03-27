@@ -1,6 +1,6 @@
 import "../../styles/_case-study.scss";
 import breakPointObserver from "../../breakPointObserver";
-import React, { FormEvent, FormEventHandler, useEffect, useState } from "react";
+import React, { ChangeEventHandler, FormEvent, FormEventHandler, useEffect, useState } from "react";
 
 import caseStudyReport from "../../case-study.json";
 
@@ -152,6 +152,7 @@ export default function CaseStudy() {
             viewBox="0 0 1792 1792"
             xmlns="http://www.w3.org/2000/svg">
             <path
+              className="blur"
               fill="#516163"
               d="M1293 1139l102-102q19-19 19-45t-19-45l-454-454q-19-19-45-19t-45 19l-454 454q-19 19-19 45t19 45l102 102q19 19 45 19t45-19l307-307 307 307q19 19 45 19t45-19zm371-243q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"
             />
@@ -163,26 +164,17 @@ export default function CaseStudy() {
   let contentsBanner = () => {
     if (breakPoint === "small") {
       if (!contentsVisible) {
+        document.body.classList.remove("disable-scroll");
         return (
           <button className="tbc" onClick={() => setContents(true)}>
             Table of contents
           </button>
         );
-      } else return <></>;
+      } else {
+        document.body.classList.add("disable-scroll");
+        return <></>;
+      }
     } else return <></>;
-  };
-
-  const imageComparison = () => {
-    return (
-      <>
-        <div id="slider" className="beer-slider" data-beer-label="before">
-          <img src="./old-design.png" alt="" />
-          <div className="beer-reveal" data-beer-label="after">
-            <img src="new-design.png" alt="" />
-          </div>
-        </div>
-      </>
-    );
   };
 
   let contentsCloseBtn = () => {
@@ -217,6 +209,95 @@ export default function CaseStudy() {
       if (contentsVisible) return "show";
       else return "hidden";
     }
+  };
+
+  const imageSlider = () => {
+    const slide = (e: React.ChangeEvent) => {
+      const input = e.target as HTMLInputElement;
+      const clippedImg = document.querySelector(".img2") as HTMLImageElement;
+
+      const newValue = `${input.value}%`;
+      clippedImg.style.setProperty("--exposure", newValue);
+    };
+    return (
+      <div className="img-compare">
+        <img className="img1" src="./new-design1.png" alt="Old website design" />
+        <span className="wrapper">
+          <img className="img2" src="./old-design1.png" alt="New website design" />
+        </span>
+        <label>
+          <span className="sr-only">Select what percentage of old image to show</span>
+          <input onChange={(e) => slide(e)} type="range" min={0} max={100} />
+        </label>
+      </div>
+    );
+  };
+  let counter = [0, 1, 2];
+  const imageItems = [
+    {
+      tite: "AdoredTv",
+      site: "https://adoredtv.com/",
+      src: "./adoredtv.png",
+    },
+    {
+      tite: "The Verge",
+      site: "https://www.theverge.com/tech",
+      src: "./theverge.png",
+    },
+    {
+      tite: "ANANDTECH",
+      site: "https://www.anandtech.com/",
+      src: "./anandtech.png",
+    },
+  ];
+  const [active, setActiveSite] = useState(0);
+
+  let nextGalleryItem = () => {
+    if (active < imageItems.length - 1) {
+      return setActiveSite((previous) => previous + 1);
+    } else setActiveSite(0);
+  };
+  let counterClick = (index: number) => {
+    setActiveSite(index);
+  };
+  let prevGalleryItem = () => {
+    if (active > 0) {
+      return setActiveSite((previous) => previous - 1);
+    } else setActiveSite(imageItems.length - 1);
+  };
+  let getFillColour = (index: number) => {
+    if (active === index) return "#ffcc00";
+    else return "#000000";
+  };
+
+  const imgGallery = () => {
+    return (
+      <section className="image-gallery2">
+        <h2>{imageItems[active].tite} </h2>
+        <img src={imageItems[active].src} alt="click to enlarge image" />
+
+        <button onClick={nextGalleryItem} className="next"></button>
+        <button onClick={prevGalleryItem} className="prev"></button>
+        <span className="counter">
+          {counter.map((item, index) => {
+            return (
+              <svg
+                key={index}
+                onClick={() => counterClick(index)}
+                width="24"
+                height="24"
+                viewBox="0 0 1792 1792"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill={getFillColour(index)}
+                  d="M1664 896q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"
+                />
+              </svg>
+            );
+          })}
+        </span>
+      </section>
+    );
   };
   return (
     <>
@@ -414,7 +495,7 @@ export default function CaseStudy() {
             <h2 id="comments" className="section-title">
               {oldDesign.comments.title}
             </h2>
-            <p className="section-content">{oldDesign.analysis.p1}</p>
+            <p className="section-content">{oldDesign.comments.p1}</p>
             <div>
               <p className="section-content">
                 {oldDesign.comments.p2}
@@ -436,6 +517,8 @@ export default function CaseStudy() {
 
             <p className="section-content">
               {oldDesign.comments.p7}
+              <br />
+              <br />
               {oldDesign.comments.p8}
               <br />
               <br />
@@ -486,12 +569,10 @@ export default function CaseStudy() {
           <h2 id="redesign" className="improved">
             <span className="sr-only">The improved design</span>The codeproject.com
           </h2>
-
-          {getBtnImg("./new-design.png", "new-design-img")}
+          {imageSlider()}
           {/* {getBtnImg("./newdesign-1.png")}
           {getBtnImg("./newdesign-2.png")}
           {getBtnImg("./newdesign-3.png")} */}
-
           <section className="study-section research">
             <h2 id="research" className="section-title">
               {newDesign.research.title}
@@ -501,16 +582,15 @@ export default function CaseStudy() {
               <br />
               <br />
               {newDesign.research.p2}
-              <br />
-              <br />
+            </p>
+            {imgGallery()}
+            <p className="section-content">
               {newDesign.research.p3}
-              <br />
               <br />
             </p>
             {/*Image button make*/}
             <p className="section-content">{newDesign.research.p4}</p>
           </section>
-
           <section className="study-section conclusions">
             <h2 id="conclusions" className="section-title">
               {newDesign.conclusions.title}
@@ -549,7 +629,6 @@ export default function CaseStudy() {
               {newDesign.conclusions.p11}
             </p>
           </section>
-
           <section className="study-section wireframe">
             <h2 id="wireframe" className="section-title">
               {newDesign.wireframe.title}
@@ -569,7 +648,6 @@ export default function CaseStudy() {
               {newDesign.wireframe.p5}
             </p>
           </section>
-
           <section className="study-section navigation">
             <h2 id="navigation" className="section-title">
               {newDesign.navigation.title}
@@ -594,7 +672,6 @@ export default function CaseStudy() {
               {newDesign.navigation.p6}
             </p>
           </section>
-
           <section className="study-section header">
             <h2 id="header" className="section-title">
               {newDesign.header.title}
@@ -610,7 +687,6 @@ export default function CaseStudy() {
               {newDesign.header.p3}
             </p>
           </section>
-
           <section className="study-section new-body">
             <h2 id="new-body" className="section-title">
               {newDesign.body.title}
@@ -627,12 +703,8 @@ export default function CaseStudy() {
               <br />
               <br />
               {newDesign.body.p4}
-              <br />
-              <br />
-              {newDesign.body.p5}
             </p>
           </section>
-
           <section className="study-section new-article-footer">
             <h2 id="article-footer" className="section-title">
               {newDesign.articleFooter.title}
@@ -648,7 +720,6 @@ export default function CaseStudy() {
               {newDesign.articleFooter.p3}
             </p>
           </section>
-
           <section className="study-section about">
             <h2 id="new-author" className="section-title">
               {newDesign.about.title}
@@ -667,7 +738,6 @@ export default function CaseStudy() {
               {newDesign.about.p4}
             </p>
           </section>
-
           <section className="study-section new-comments">
             <h2 id="new-comments" className="section-title">
               {newDesign.comments.title}
@@ -731,7 +801,6 @@ export default function CaseStudy() {
               {newDesign.comments.p19}
             </p>
           </section>
-
           <section className="study-section new-footer">
             <h2 id="new-footer" className="section-title">
               {newDesign.footer.title}
@@ -756,7 +825,6 @@ export default function CaseStudy() {
               {newDesign.footer.p6}
             </p>
           </section>
-
           <section className="study-section finale">
             <h2 id="finale" className="section-title">
               {newDesign.finale.title}
@@ -777,7 +845,6 @@ export default function CaseStudy() {
               {newDesign.finale.p5}
             </p>
           </section>
-
           {showButton()}
         </section>
       </main>
