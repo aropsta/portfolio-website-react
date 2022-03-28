@@ -16,8 +16,8 @@ let galleryItems = [
   },
   {
     tite: "tip calculator",
-    site: "",
-    code: "",
+    site: "https://aropsta.github.io/tip-calculator-app-main/",
+    code: "https://github.com/aropsta/tip-calculator-app-main",
     src: "./my-work/tip-calculator.jpg",
   },
   {
@@ -45,10 +45,10 @@ let galleryItems = [
     src: "./my-work/order-summary.jpg",
   },
   {
-    tite: "social proof section",
+    tite: "my website",
     site: "base apparel",
     code: "base apparel",
-    src: "./my-work/social-proof.jpg",
+    src: "./my-work/my-site.png",
   },
 ];
 
