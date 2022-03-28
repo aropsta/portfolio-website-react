@@ -80,7 +80,7 @@ export default function MyWork() {
     <>
       <main className="my-work-main">
         <header className="">
-          <h1>Work showcase gallary </h1>
+          <h1 id="work-showcase">Work showcase gallary </h1>
           <p>
             All sites are fully responsive and look great on all screen sizes and modern browsers
           </p>

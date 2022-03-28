@@ -1,4 +1,5 @@
 import React, { FormEvent, RefObject, useEffect, useRef, useState, useCallback } from "react";
+import { HashLink } from "react-router-hash-link";
 import "../../styles/home.scss";
 import breakPointObserver from "../../breakPointObserver";
 import { init } from "@emailjs/browser";
@@ -46,6 +47,57 @@ let quotes = [
   {
     title: "Linux",
     content: "I use arch btw",
+  },
+];
+
+let galleryItems = [
+  {
+    tite: "base apparel",
+    site: "https://623c06ff2783f00009e0543c--naughty-visvesvaraya-8e9d40.netlify.app/",
+    code: "https://github.com/aropsta/base-apparel-coming-soon_react",
+    src: "./my-work/base-apparel.jpg",
+  },
+  {
+    tite: "time tracking dashboard",
+    site: "https://61f3836f34bc9a0007fbbacf--jolly-hopper-43a522.netlify.app/",
+    code: "https://github.com/aropsta/time-tracking-dashboard-main",
+    src: "./my-work/time-tracking.jpg",
+  },
+  {
+    tite: "tip calculator",
+    site: "https://aropsta.github.io/tip-calculator-app-main/",
+    code: "https://github.com/aropsta/tip-calculator-app-main",
+    src: "./my-work/tip-calculator.jpg",
+  },
+  {
+    tite: "four-card feature section",
+    site: "https://aropsta.github.io/four-card-feature-section-master/",
+    code: "https://github.com/aropsta/four-card-feature-section-master",
+    src: "./my-work/four-card.jpg",
+  },
+  {
+    tite: "three-column preview card",
+    site: "https://aropsta.github.io/3-column-preview-card-component-main/",
+    code: "https://github.com/aropsta/3-column-preview-card-component-main",
+    src: "./my-work/three-column.jpg",
+  },
+  {
+    tite: "single price grid component",
+    site: "https://aropsta.github.io/single-price-grid-component-master/",
+    code: "https://github.com/aropsta/single-price-grid-component-master",
+    src: "./my-work/single-price.jpg",
+  },
+  {
+    tite: "order summary component",
+    site: "https://aropsta.github.io/order-summary-component-main/",
+    code: "https://github.com/aropsta/order-summary-component-main",
+    src: "./my-work/order-summary.jpg",
+  },
+  {
+    tite: "my website",
+    site: "base apparel",
+    code: "base apparel",
+    src: "./my-work/my-site.png",
   },
 ];
 const breakPoints = {
@@ -160,7 +212,7 @@ function Home() {
             <br />
             <br />
             From coding to drawing, playing and creating music, and even math and science. If it can
-            be used to express, I will always be interested,
+            be used to express I will always be interested,
             <br />
           </p>
           {getImg("bottom")}
@@ -182,18 +234,24 @@ function Home() {
         <p>A sample of my web projects</p>
         <ul>
           <li>
-            <img src="./my-work/base-apparel.jpg" alt="" />
+            <a target="_black" rel="noopener noreferrer" href={galleryItems[0].site}>
+              <img src="./my-work/base-apparel.jpg" alt="" />
+            </a>
           </li>
           <li>
-            <img src="./my-work/tip-calculator.jpg" alt="" />
+            <a target="_black" rel="noopener noreferrer" href={galleryItems[2].site}>
+              <img src="./my-work/tip-calculator.jpg" alt="" />
+            </a>
           </li>
           <li>
-            <img src="./my-work/time-tracking.jpg" alt="" />
+            <a target="_black" rel="noopener noreferrer" href={galleryItems[1].site}>
+              <img src="./my-work/time-tracking.jpg" alt="" />
+            </a>
           </li>
         </ul>
-        <a className="cta" href="/my-work">
+        <HashLink to="/my-work#work-showcase" className="cta">
           view more
-        </a>
+        </HashLink>
       </section>
 
       <section id="contact" className="contact">
