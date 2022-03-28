@@ -25,7 +25,6 @@ const Form = () => {
   const inputs = [
     {
       id: 0,
-      pattern: "^[A-Za-z]{3,16}$",
       name: "name",
       type: "text",
       label: "Name",
