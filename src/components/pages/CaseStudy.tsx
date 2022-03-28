@@ -1,4 +1,4 @@
-import "../../styles/_case-study.scss";
+import "../../styles/case-study.scss";
 import breakPointObserver from "../../breakPointObserver";
 import React, { ChangeEventHandler, FormEvent, FormEventHandler, useEffect, useState } from "react";
 

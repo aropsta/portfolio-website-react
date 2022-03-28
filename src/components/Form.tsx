@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import FormInput from "./FormInput";
 
 import emailjs from "@emailjs/browser";
-import "../styles/_form-input.scss";
+import "../styles/form-input.scss";
 
 interface formData {
   [key: string]: string;

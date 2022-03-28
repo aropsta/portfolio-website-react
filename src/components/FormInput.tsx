@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/_form-input.scss";
+import "../styles/form-input.scss";
 
 export interface FormInputProps extends React.ComponentPropsWithoutRef<any> {
   specialProp?: string;

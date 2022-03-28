@@ -1,5 +1,5 @@
 import React, { FormEvent, RefObject, useEffect, useRef, useState, useCallback } from "react";
-import "../../styles/_home.scss";
+import "../../styles/home.scss";
 import breakPointObserver from "../../breakPointObserver";
 import { init } from "@emailjs/browser";
 

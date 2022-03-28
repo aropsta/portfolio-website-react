@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../styles/_my-work.scss";
+import "../../styles/my-work.scss";
 
 let galleryItems = [
   {

@@ -1,6 +1,6 @@
 import React, { Component, useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom";
-import "../styles/_header.scss";
+import "../styles/header.scss";
 
 import breakPointObserver from "../breakPointObserver";
 import { HashLink } from "react-router-hash-link";
