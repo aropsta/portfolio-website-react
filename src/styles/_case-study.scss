@@ -120,10 +120,6 @@ main {
     padding-bottom: 0;
     top: 0;
 
-    h2 {
-    }
-    ul {
-    }
     .title {
       font-size: 1.5rem;
     }
@@ -161,8 +157,6 @@ main {
       font-weight: 600;
     }
     @media (min-width: $mobile-breakpoint) {
-      img {
-      }
     }
   }
   ul {
@@ -226,8 +220,6 @@ main {
     cursor: pointer;
     svg path {
       fill: $primary;
-    }
-    img {
     }
   }
 }
@@ -374,8 +366,6 @@ main {
   }
 
   @media (min-width: $mobile-breakpoint) {
-    img {
-    }
   }
 }
 
@@ -462,10 +452,6 @@ main {
       :last-child {
         flex: 1 1 100%;
       }
-    }
-    :nth-child(2) {
-    }
-    :nth-child(4) {
     }
   }
 }
@@ -663,6 +649,7 @@ main {
     }
     &:focus::-moz-range-thumb {
       /* thumb focus styles */
+      color: black;
     }
 
     /* Chrome, Safari and Edge, */
@@ -679,6 +666,7 @@ main {
 
     &:focus::-webkit-slider-thumb {
       /* thumb focus styles */
+      color: black;
     }
   }
 
