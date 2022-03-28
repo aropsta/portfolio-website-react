@@ -69,6 +69,7 @@ const Form = () => {
 
   const [values, setValues] = useState(initialFormState);
   const [submitted, submitForm] = useState(false);
+  const [success, setSucess] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -85,9 +86,11 @@ const Form = () => {
     emailjs.send("service_jg9eb2q", "template_73aayf3", values, "vRPeubQbjqke4IyjA").then(
       (response) => {
         console.log("SUCCESS", response);
+        setSucess(true);
       },
       (error) => {
         console.log("FAILED...", error);
+        setSucess(false);
       }
     );
   };
@@ -99,7 +102,7 @@ const Form = () => {
       <p className="required">
         Required fields are followed by <abbr title="required">*</abbr>{" "}
       </p>
-      {submitted && <p className="sent">Sent successfully!</p>}
+      {submitted && success && <p className="sent">Sent successfully!</p>}
       {inputs.map((input) => {
         return (
           <FormInput
