@@ -12,7 +12,6 @@
     "@types/node": "^16.11.25",
     "@types/react-dom": "^17.0.11",
     "cors": "^2.8.5",
-    "image-compare": "^0.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1",
@@ -24,6 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "predeploy": "npm run build",
     "eject": "react-scripts eject",
     "postinstall": "vendor-copy"
   },
@@ -60,6 +60,7 @@
     "@types/react": "^17.0.42",
     "@types/react-router-hash-link": "^2.4.5",
     "beerslider": "^1.0.3",
-    "react-router-hash-link": "^2.4.3"
+    "react-router-hash-link": "^2.4.3",
+    "sass": "^1.48.0"
   }
 }
