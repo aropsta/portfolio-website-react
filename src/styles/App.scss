@@ -1,5 +1,5 @@
 @use "./index.scss";
-@forward "./variables";
+@use "./variables";
 
 .App {
   display: flex;
