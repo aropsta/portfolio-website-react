@@ -83,14 +83,14 @@ const Form = () => {
   const sendEmail = () => {
     console.log("SENT!");
     submitForm(true);
-    // emailjs.send("service_jg9eb2q", "template_73aayf3", values, "vRPeubQbjqke4IyjA").then(
-    //   (response) => {
-    //     console.log("SUCCESS", response);
-    //   },
-    //   (error) => {
-    //     console.log("FAILED...", error);
-    //   }
-    // );
+    emailjs.send("service_jg9eb2q", "template_73aayf3", values, "vRPeubQbjqke4IyjA").then(
+      (response) => {
+        console.log("SUCCESS", response);
+      },
+      (error) => {
+        console.log("FAILED...", error);
+      }
+    );
   };
 
   return (
