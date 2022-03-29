@@ -208,7 +208,7 @@ export default function CaseStudy() {
     if (breakPoint === "small") {
       if (contentsVisible) return "show";
       else return "hidden";
-    }
+    } else return "";
   };
 
   const imageSlider = () => {

@@ -46,8 +46,8 @@ let galleryItems = [
   },
   {
     tite: "my website",
-    site: "base apparel",
-    code: "base apparel",
+    site: "https://arob-deng-portfolio.netlify.app/",
+    code: "https://github.com/aropsta/portfolio-website-react",
     src: "./my-work/my-site.png",
   },
 ];

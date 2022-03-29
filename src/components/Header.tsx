@@ -37,6 +37,7 @@ export default function Header() {
   const [click, setClick] = useState(false);
 
   const [breakPoint, isBreakPoint] = useState();
+  const [headerHidden, changeHeaderVisibility] = useState(false);
   useEffect(() => {
     breakPointObserver(breakPoints, isBreakPoint);
   }, [breakPoint]);
@@ -53,6 +54,27 @@ export default function Header() {
     setClick(!click);
   };
 
+  let lastScrollY = window.scrollY;
+  let mobileWidth = 1960;
+
+  // window.addEventListener("scroll", () => {
+  //   console.log("Last" + lastScrollY);
+  //   console.log("Current" + window.ScrolY);
+  //   if (lastScrollY < window.scrollY) {
+  //     changeHeaderVisibility(true);
+  //   } else {
+  //     changeHeaderVisibility(false);
+  //   }
+  //   lastScrollY = window.scrollY;
+  // });
+
+  const hideHeader = () => {
+    // if (headerHidden) {
+    //   return "hide-header";
+    // } else
+    return "";
+  };
+
   const toggleScroll = (a: boolean) => {
     if (a) {
       document.body.classList.add("disable-scroll");
@@ -67,7 +89,7 @@ export default function Header() {
   };
 
   return (
-    <nav className="navbar glass-effect">
+    <nav className={`navbar glass-effect ${hideHeader()}`}>
       <Link className="navbar-logo" to="/" onClick={closeMobileMenu}>
         Arob Deng
       </Link>

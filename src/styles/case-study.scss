@@ -78,10 +78,10 @@ main {
     height: 100vh;
     transform: translateY(0);
     position: sticky;
-    top: 0;
+    top: $header-height;
     left: 0;
     display: flex;
-    padding: 2rem 0rem 2rem 3rem;
+    padding: 0rem 0rem 2rem 3rem;
     grid-gap: 0.5rem;
     flex-direction: column;
     background-color: $white;
