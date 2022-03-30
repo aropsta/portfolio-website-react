@@ -2,10 +2,7 @@ import React, { FormEvent, RefObject, useEffect, useRef, useState, useCallback }
 import { HashLink } from "react-router-hash-link";
 import "../../styles/home.scss";
 import breakPointObserver from "../../breakPointObserver";
-import { init } from "@emailjs/browser";
-
 import Form from "../Form";
-import FormInput from "../FormInput";
 
 let quotes = [
   {
@@ -224,7 +221,7 @@ function Home() {
           <article className="question-card">
             <p className="title">{quotes[quoteIndex].title}</p>
             <p className="content">"{quotes[quoteIndex].content}"</p>
-            <button onClick={nextQuote}></button>
+            <button aria-label="Next quote" onClick={nextQuote}></button>
           </article>
         </section>
       </section>
@@ -234,17 +231,29 @@ function Home() {
         <p>A sample of my web projects</p>
         <ul>
           <li>
-            <a target="_black" rel="noopener noreferrer" href={galleryItems[0].site}>
+            <a
+              aria-label={`Go to ${galleryItems[0].tite}`}
+              target="_black"
+              rel="noopener noreferrer"
+              href={galleryItems[0].site}>
               <img src="./my-work/base-apparel.jpg" alt="" />
             </a>
           </li>
           <li>
-            <a target="_black" rel="noopener noreferrer" href={galleryItems[2].site}>
+            <a
+              aria-label={`Go to ${galleryItems[0].tite}`}
+              target="_black"
+              rel="noopener noreferrer"
+              href={galleryItems[2].site}>
               <img src="./my-work/tip-calculator.jpg" alt="" />
             </a>
           </li>
           <li>
-            <a target="_black" rel="noopener noreferrer" href={galleryItems[1].site}>
+            <a
+              aria-label={`Go to ${galleryItems[0].tite}`}
+              target="_black"
+              rel="noopener noreferrer"
+              href={galleryItems[1].site}>
               <img src="./my-work/time-tracking.jpg" alt="" />
             </a>
           </li>

@@ -47,7 +47,7 @@ const FormInput = (props: FormInputProps) => {
       <label className="input-label">
         {label}
         {inputProps.required && (
-          <abbr title="'strubg" aria-label="required">
+          <abbr title={`${label} is required`} aria-label="required">
             *
           </abbr>
         )}

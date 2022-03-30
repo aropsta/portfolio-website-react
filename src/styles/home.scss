@@ -179,9 +179,12 @@ html {
     justify-content: center;
     align-items: center;
     width: min(90%, 15rem);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     text-decoration: none;
     color: inherit;
+    @media (min-width: $mobile-breakpoint) {
+      font-size: 1.4rem;
+    }
   }
 
   .cta:hover {

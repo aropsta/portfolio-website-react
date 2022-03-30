@@ -127,14 +127,12 @@ export default function Header() {
           </HashLink>
         </li>
       </ul>
-      <menu className="menu-icon" onClick={menuClick}>
-        <li>
-          <i
-            className={
-              click ? `fas fa-times ${toggleScroll(true)} ` : `fas fa-bars ${toggleScroll(false)}}`
-            }></i>
-        </li>
-      </menu>
+      <button className="menu-icon" onClick={menuClick} aria-label="Open menu">
+        <i
+          className={
+            click ? `fas fa-times ${toggleScroll(true)} ` : `fas fa-bars ${toggleScroll(false)}}`
+          }></i>
+      </button>
     </nav>
   );
 }

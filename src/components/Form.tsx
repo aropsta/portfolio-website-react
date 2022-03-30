@@ -3,6 +3,8 @@ import FormInput from "./FormInput";
 
 import emailjs from "@emailjs/browser";
 import "../styles/form-input.scss";
+import { BarLoader } from "react-spinners";
+import "../styles/loading.css";
 
 interface formData {
   [key: string]: string;
@@ -70,6 +72,7 @@ const Form = () => {
   const [values, setValues] = useState(initialFormState);
   const [submitted, submitForm] = useState(false);
   const [success, setSucess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -81,28 +84,56 @@ const Form = () => {
     setValues({ ...values, [name]: value });
   };
   const sendEmail = () => {
-    console.log("SENT!");
     submitForm(true);
+    setLoading(true);
     emailjs.send("service_jg9eb2q", "template_73aayf3", values, "vRPeubQbjqke4IyjA").then(
       (response) => {
         console.log("SUCCESS", response);
         setSucess(true);
+        setLoading(false);
       },
       (error) => {
         console.log("FAILED...", error);
         setSucess(false);
+        setLoading(false);
       }
     );
+  };
+
+  // useEffect(() => {
+  //   if (submitted) setLoading(true);
+  // }, [submitted]);
+
+  const resultP = () => {
+    if (submitted && !loading) {
+      console.log("SUBMITTED!! and LOADING!!");
+      if (success) {
+        console.log("SUCESS!");
+        return (
+          <div className="sent blur">
+            <p className="success">Sent successfully!</p>
+          </div>
+        );
+      }
+      if (!success) {
+        console.log("FAILED!");
+        return (
+          <div className="sent blur">
+            <p className="fail">Failed! Something went wrong!</p>
+          </div>
+        );
+      }
+    } else return <></>;
   };
 
   return (
     <form className="form" onSubmit={handleSubmit}>
       {/* {validForm && submitted ? <p className="sent">Sent successfully!</p> : <></>} */}{" "}
-      <h2 aria-label="Contact me">Get in touch</h2>{" "}
+      <h2 aria-label="Contact me">Contact me</h2>{" "}
       <p className="required">
         Required fields are followed by <abbr title="required">*</abbr>{" "}
       </p>
-      {submitted && success && <p className="sent">Sent successfully!</p>}
+      {resultP()}
       {inputs.map((input) => {
         return (
           <FormInput
@@ -113,6 +144,16 @@ const Form = () => {
         );
       })}
       <button type="submit">Send</button>
+      {submitted && loading && (
+        <BarLoader
+          speedMultiplier={2}
+          color="#FFCC00"
+          width="50%"
+          height="5px"
+          loading={true}
+          css="align-self: center; position: absolute; bottom: 1%; left:50%; transform: translate(-50%);"
+        />
+      )}
     </form>
   );
 };

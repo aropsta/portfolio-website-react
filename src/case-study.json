@@ -3,7 +3,7 @@
     "overview": {
       "title": "Overview",
       "p1": "CodeProject is a community for users where they can view, create and interact with articles on various subjects related to technology and software.",
-      "p2": "The site was founded in 1999 and although has had various improvements over the years, it is still lacking in good fundamental design principles. The aim of this project is to bring this decade-old site up to date with modern UI design principles. ",
+      "p2": "The site was founded in 1999 and although has had various improvements over the years, it is still lacking in good fundamental design principles. The aim of this project is to bring this decade-old design up to date in-line with modern design patterns. ",
       "p3": "A cluttered interface, lack of consistent scaling and many other questionable design decisions are what we seek to resolve."
     },
     "analysis": {

@@ -45,11 +45,11 @@ export default function CaseStudy() {
     }
   };
 
-  let returnBreak = () => {
+  const returnBreak = () => {
     if (breakPoint === "small") return <br />;
   };
 
-  let getBtnImg = (src: string, cName: string) => {
+  const getBtnImg = (src: string, cName: string) => {
     return (
       <button
         data-larger={src}
@@ -276,8 +276,8 @@ export default function CaseStudy() {
         <h2>{imageItems[active].tite} </h2>
         <img src={imageItems[active].src} alt="click to enlarge image" />
 
-        <button onClick={nextGalleryItem} className="next"></button>
-        <button onClick={prevGalleryItem} className="prev"></button>
+        <button aria-label="Next image" onClick={nextGalleryItem} className="next"></button>
+        <button aria-label="Previous image" onClick={prevGalleryItem} className="prev"></button>
         <span className="counter">
           {counter.map((item, index) => {
             return (
@@ -310,81 +310,75 @@ export default function CaseStudy() {
           <ul>
             <li>
               <h2 className="title">1 Introduction</h2>
-              <ul>
-                <a onClick={closeContents} href="#overview" className="sub-title">
-                  1.1 Overview
-                </a>
-              </ul>
+              <a onClick={closeContents} href="#overview" className="sub-title">
+                1.1 Overview
+              </a>
             </li>
 
             <li>
               <h2 className="title">2 The old design</h2>
-              <ul>
-                <a onClick={closeContents} href="#analysis" className="sub-title">
-                  2.1 Analysis
-                </a>
-                <a onClick={closeContents} href="#article-title" className="sub-title">
-                  2.2 Article title
-                </a>
-                <a onClick={closeContents} href="#author-section" className="sub-title">
-                  2.3 Author section
-                </a>
-                <a onClick={closeContents} href="#body" className="sub-title">
-                  2.4 The body
-                </a>
-                <a onClick={closeContents} href="#comments" className="sub-title">
-                  2.5 Commnets and discussions
-                </a>
-                <a onClick={closeContents} href="#aside" className="sub-title">
-                  2.6 Article aside
-                </a>
-                <a onClick={closeContents} href="#footer" className="sub-title">
-                  2.7 Footer
-                </a>
-              </ul>
+              <a onClick={closeContents} href="#analysis" className="sub-title">
+                2.1 Analysis
+              </a>
+              <a onClick={closeContents} href="#article-title" className="sub-title">
+                2.2 Article title
+              </a>
+              <a onClick={closeContents} href="#author-section" className="sub-title">
+                2.3 Author section
+              </a>
+              <a onClick={closeContents} href="#body" className="sub-title">
+                2.4 The body
+              </a>
+              <a onClick={closeContents} href="#comments" className="sub-title">
+                2.5 Commnets and discussions
+              </a>
+              <a onClick={closeContents} href="#aside" className="sub-title">
+                2.6 Article aside
+              </a>
+              <a onClick={closeContents} href="#footer" className="sub-title">
+                2.7 Footer
+              </a>
             </li>
 
             <li>
               <h2 className="title">3 The redesign</h2>
 
-              <ul>
-                <a onClick={closeContents} href="#redesign" className="sub-title">
-                  3.1 Updated and improved
-                </a>
-                <a onClick={closeContents} href="#research" className="sub-title">
-                  3.2 Research
-                </a>
-                <a onClick={closeContents} href="#conclusions" className="sub-title">
-                  3.3 Research conclusions
-                </a>
-                <a onClick={closeContents} href="#wireframe" className="sub-title">
-                  3.4 Wireframe stage
-                </a>
-                <a onClick={closeContents} href="#navigation" className="sub-title">
-                  3.5 Navigation
-                </a>
-                <a onClick={closeContents} href="#header" className="sub-title">
-                  3.6 Article header
-                </a>
-                <a onClick={closeContents} href="#new-body" className="sub-title">
-                  3.7 The body
-                </a>
-                <a onClick={closeContents} href="#article-footer" className="sub-title">
-                  3.8 Article Footer
-                </a>
-                <a onClick={closeContents} href="#new-author" className="sub-title">
-                  3.9 About section
-                </a>
-                <a onClick={closeContents} href="#new-comments" className="sub-title">
-                  3.10 Comments and discussions
-                </a>
-                <a onClick={closeContents} href="#new-footer" className="sub-title">
-                  3.11 Footer
-                </a>
-                <a onClick={closeContents} href="#finale" className="sub-title">
-                  3.12 Final thoughts
-                </a>
-              </ul>
+              <a onClick={closeContents} href="#redesign" className="sub-title">
+                3.1 Updated and improved
+              </a>
+              <a onClick={closeContents} href="#research" className="sub-title">
+                3.2 Research
+              </a>
+              <a onClick={closeContents} href="#conclusions" className="sub-title">
+                3.3 Research conclusions
+              </a>
+              <a onClick={closeContents} href="#wireframe" className="sub-title">
+                3.4 Wireframe stage
+              </a>
+              <a onClick={closeContents} href="#navigation" className="sub-title">
+                3.5 Navigation
+              </a>
+              <a onClick={closeContents} href="#header" className="sub-title">
+                3.6 Article header
+              </a>
+              <a onClick={closeContents} href="#new-body" className="sub-title">
+                3.7 The body
+              </a>
+              <a onClick={closeContents} href="#article-footer" className="sub-title">
+                3.8 Article Footer
+              </a>
+              <a onClick={closeContents} href="#new-author" className="sub-title">
+                3.9 About section
+              </a>
+              <a onClick={closeContents} href="#new-comments" className="sub-title">
+                3.10 Comments and discussions
+              </a>
+              <a onClick={closeContents} href="#new-footer" className="sub-title">
+                3.11 Footer
+              </a>
+              <a onClick={closeContents} href="#finale" className="sub-title">
+                3.12 Final thoughts
+              </a>
             </li>
           </ul>
         </section>
@@ -395,15 +389,9 @@ export default function CaseStudy() {
             <h2 id="overview" className="section-title">
               {oldDesign.overview.title}
             </h2>
-            <p className="section-content">
-              {oldDesign.overview.p1}
-              {returnBreak()}
-              <br />
-              {oldDesign.overview.p2}
-              <br />
-              {returnBreak()}
-              {oldDesign.overview.p3}
-            </p>
+            <p className="section-content">{oldDesign.overview.p1}</p>
+            <p className="section-content">{oldDesign.overview.p2}</p>
+            <p className="section-content">{oldDesign.overview.p3}</p>
             {getImg("bottom")}
           </section>
 
@@ -412,18 +400,10 @@ export default function CaseStudy() {
               {oldDesign.analysis.title}
             </h2>
             {getBtnImg("./analysis.png", "analysis-img")}
-            <p className="section-content">
-              {oldDesign.analysis.p1}
-              <br />
-              <br />
-              {oldDesign.analysis.p2}
-              <br />
-              <br />
-              {oldDesign.analysis.p3}
-              <br />
-              <br />
-              {oldDesign.analysis.p4}
-            </p>
+            <p className="section-content">{oldDesign.analysis.p1}</p>
+            <p className="section-content">{oldDesign.analysis.p2}</p>
+            <p className="section-content">{oldDesign.analysis.p3}</p>
+            <p className="section-content">{oldDesign.analysis.p4}</p>
           </section>
 
           <section className="study-section article-title">
@@ -439,54 +419,31 @@ export default function CaseStudy() {
             </h2>
             {getBtnImg("./author-section.png", "author-img")}
 
-            <p className="section-content">
-              {oldDesign.authorSection.p1}
-              <br />
-              <br />
-              {oldDesign.authorSection.p2}
-              <br />
-              <br />
-            </p>
-            <div>
-              <p className="section-content">
-                {oldDesign.authorSection.p3}
-                <br />
-                <br />
-                {oldDesign.authorSection.p4}
-                <br />
-                <br />
-                {oldDesign.authorSection.p5}
-                <br />
-                <br />
-                {oldDesign.authorSection.p6}
-              </p>
-
+            <p className="section-content">{oldDesign.authorSection.p1}</p>
+            <p className="section-content">{oldDesign.authorSection.p2}</p>
+            <div className="outter-div">
+              <div className="inner-div">
+                <p className="section-content">{oldDesign.authorSection.p3}</p>
+                <p className="section-content">{oldDesign.authorSection.p4}</p>
+                <p className="section-content">{oldDesign.authorSection.p5}</p>
+                <p className="section-content">{oldDesign.authorSection.p6}</p>
+              </div>
               {getBtnImg("./about-the-author.png", "author-img2")}
             </div>
-            <p className="section-content">
-              <br />
-              <br />
-              {oldDesign.authorSection.p7}
-              <br />
-              <br />
-              {oldDesign.authorSection.p8}
-            </p>
+            <p className="section-content">{oldDesign.authorSection.p7}</p>
+            <p className="section-content">{oldDesign.authorSection.p8}</p>
           </section>
 
           <section className="study-section body">
             <h2 id="body" className="section-title">
               {oldDesign.body.title}
             </h2>
-            <div>
-              <p className="section-content">
-                {oldDesign.body.p1}
-                <br />
-                <br />
-                {oldDesign.body.p2}
-                <br />
-                <br />
-                {oldDesign.body.p3}
-              </p>
+            <div className="outter-div">
+              <div className="inner-div">
+                <p className="section-content">{oldDesign.body.p1}</p>
+                <p className="section-content">{oldDesign.body.p2}</p>
+                <p className="section-content">{oldDesign.body.p3}</p>
+              </div>
               {getBtnImg("./body.png", "body-img")}
             </div>
           </section>
@@ -496,52 +453,30 @@ export default function CaseStudy() {
               {oldDesign.comments.title}
             </h2>
             <p className="section-content">{oldDesign.comments.p1}</p>
-            <div>
-              <p className="section-content">
-                {oldDesign.comments.p2}
-                <br />
-                <br />
-                {oldDesign.comments.p3}
-                <br />
-                <br />
-                {oldDesign.comments.p4}
-                <br />
-                <br />
-                {oldDesign.comments.p5}
-                <br />
-                <br />
-                {oldDesign.comments.p6}
-              </p>
+            <div className="outter-div">
+              <div className="inner-div">
+                <p className="section-content">{oldDesign.comments.p2}</p>
+                <p className="section-content">{oldDesign.comments.p3}</p>
+                <p className="section-content">{oldDesign.comments.p4}</p>
+                <p className="section-content">{oldDesign.comments.p5}</p>
+                <p className="section-content">{oldDesign.comments.p6}</p>
+              </div>
               {getBtnImg("./comments.png", "comments-img")}
             </div>
 
-            <p className="section-content">
-              {oldDesign.comments.p7}
-              <br />
-              <br />
-              {oldDesign.comments.p8}
-              <br />
-              <br />
-              {oldDesign.comments.p9}
-              <br />
-              <br />
-              {oldDesign.comments.p10}
-              <br />
-              <br />
-              {oldDesign.comments.p11}
-            </p>
+            <p className="section-content">{oldDesign.comments.p7}</p>
+            <p className="section-content">{oldDesign.comments.p8}</p>
+            <p className="section-content">{oldDesign.comments.p9}</p>
+            <p className="section-content">{oldDesign.comments.p10}</p>
+            <p className="section-content">{oldDesign.comments.p11}</p>
           </section>
 
           <section className="study-section article-aside">
             <h2 id="aside" className="section-title">
               {oldDesign.aside.title}
             </h2>
-            <p className="section-content">
-              {oldDesign.aside.p1}
-              <br />
-              <br />
-              {oldDesign.aside.p2}
-            </p>
+            <p className="section-content"> {oldDesign.aside.p1} </p>
+            <p className="section-content"> {oldDesign.aside.p2} </p>
 
             {getBtnImg("./aside.png", "aside-img")}
           </section>
@@ -550,44 +485,25 @@ export default function CaseStudy() {
             <h2 id="footer" className="section-title">
               {oldDesign.footer.title}
             </h2>
-            <p className="section-content">
-              {oldDesign.footer.p1}
-              <br />
-              <br />
-              {oldDesign.footer.p2}
-              <br />
-              <br />
-              {oldDesign.footer.p3}
-            </p>
+            <p className="section-content"> {oldDesign.footer.p1} </p>
+            <p className="section-content"> {oldDesign.footer.p2} </p>
+            <p className="section-content"> {oldDesign.footer.p3} </p>
             {getBtnImg("./footer.png", "footer-img")}
-            <p className="section-content">
-              <br />
-              {oldDesign.footer.p4}
-            </p>
+            <p className="section-content">{oldDesign.footer.p4}</p>
           </section>
 
           <h2 id="redesign" className="improved">
             <span className="sr-only">The improved design</span>The codeproject.com
           </h2>
           {imageSlider()}
-          {/* {getBtnImg("./newdesign-1.png")}
-          {getBtnImg("./newdesign-2.png")}
-          {getBtnImg("./newdesign-3.png")} */}
           <section className="study-section research">
             <h2 id="research" className="section-title">
               {newDesign.research.title}
             </h2>
-            <p className="section-content">
-              {newDesign.research.p1}
-              <br />
-              <br />
-              {newDesign.research.p2}
-            </p>
+            <p className="section-content"> {newDesign.research.p1} </p>
+            <p className="section-content"> {newDesign.research.p2} </p>
             {imgGallery()}
-            <p className="section-content">
-              {newDesign.research.p3}
-              <br />
-            </p>
+            <p className="section-content">{newDesign.research.p3}</p>
             {/*Image button make*/}
             <p className="section-content">{newDesign.research.p4}</p>
           </section>
@@ -595,255 +511,125 @@ export default function CaseStudy() {
             <h2 id="conclusions" className="section-title">
               {newDesign.conclusions.title}
             </h2>
-            <p className="section-content">
-              {newDesign.conclusions.p1}
-              <br />
-              <br />
-              {newDesign.conclusions.p2}
-              <br />
-              <br />
-              {newDesign.conclusions.p3}
-              <br />
-              <br />
-              {newDesign.conclusions.p4}
-              <br />
-              <br />
-              {newDesign.conclusions.p5}
-              <br />
-              <br />
-              {newDesign.conclusions.p6}
-              <br />
-              <br />
-              {newDesign.conclusions.p7}
-              <br />
-              <br />
-              {newDesign.conclusions.p8}
-              <br />
-              <br />
-              {newDesign.conclusions.p9}
-              <br />
-              <br />
-              {newDesign.conclusions.p10}
-              <br />
-              <br />
-              {newDesign.conclusions.p11}
-            </p>
+            <p className="section-content">{newDesign.conclusions.p1}</p>
+            <p className="section-content">{newDesign.conclusions.p2}</p>
+            <p className="section-content">{newDesign.conclusions.p3}</p>
+            <p className="section-content">{newDesign.conclusions.p4}</p>
+            <p className="section-content">{newDesign.conclusions.p5}</p>
+            <p className="section-content">{newDesign.conclusions.p6}</p>
+            <p className="section-content">{newDesign.conclusions.p7}</p>
+            <p className="section-content">{newDesign.conclusions.p8}</p>
+            <p className="section-content">{newDesign.conclusions.p9}</p>
+            <p className="section-content">{newDesign.conclusions.p10}</p>
+            <p className="section-content">{newDesign.conclusions.p11}</p>
           </section>
           <section className="study-section wireframe">
             <h2 id="wireframe" className="section-title">
               {newDesign.wireframe.title}
             </h2>
             {getBtnImg("./wireframe.jpg", "wireframe-img")}
-            <p className="section-content">
-              {newDesign.wireframe.p1}
-              <br />
-              {newDesign.wireframe.p2}
-              <br />
-              <br />
-              {newDesign.wireframe.p3}
-              <br />
-              {newDesign.wireframe.p4}
-              <br />
-              <br />
-              {newDesign.wireframe.p5}
-            </p>
+            <p className="section-content"> {newDesign.wireframe.p1} </p>
+            <p className="section-content"> {newDesign.wireframe.p2} </p>
+            <p className="section-content"> {newDesign.wireframe.p3} </p>
+            <p className="section-content"> {newDesign.wireframe.p4} </p>
+            <p className="section-content"> {newDesign.wireframe.p5} </p>
           </section>
           <section className="study-section navigation">
             <h2 id="navigation" className="section-title">
               {newDesign.navigation.title}
             </h2>
             {getBtnImg("./new-header.png", "new-header-img")}
-            <p className="section-content">
-              {newDesign.navigation.p1}
-              <br />
-              <br />
-              {newDesign.navigation.p2}
-              <br />
-              <br />
-              {newDesign.navigation.p3}
-              <br />
-              <br />
-              {newDesign.navigation.p4}
-              <br />
-              <br />
-              {newDesign.navigation.p5}
-              <br />
-              <br />
-              {newDesign.navigation.p6}
-            </p>
+            <p className="section-content"> {newDesign.navigation.p1} </p>
+            <p className="section-content"> {newDesign.navigation.p2} </p>
+            <p className="section-content"> {newDesign.navigation.p3} </p>
+            <p className="section-content"> {newDesign.navigation.p4} </p>
+            <p className="section-content"> {newDesign.navigation.p5} </p>
+            <p className="section-content"> {newDesign.navigation.p6} </p>
           </section>
           <section className="study-section header">
             <h2 id="header" className="section-title">
               {newDesign.header.title}
             </h2>
             {getBtnImg("./new-header2.png", "new-header2-img")}
-            <p className="section-content">
-              {newDesign.header.p1}
-              <br />
-              <br />
-              {newDesign.header.p2}
-              <br />
-              <br />
-              {newDesign.header.p3}
-            </p>
+            <p className="section-content"> {newDesign.header.p1} </p>
+            <p className="section-content"> {newDesign.header.p2} </p>
+            <p className="section-content"> {newDesign.header.p3} </p>
           </section>
           <section className="study-section new-body">
             <h2 id="new-body" className="section-title">
               {newDesign.body.title}
             </h2>
             {getBtnImg("./new-body.png", "new-body-img")}
-            <p className="section-content">
-              {newDesign.body.p1}
-              <br />
-              <br />
-              {newDesign.body.p2}
-              <br />
-              <br />
-              {newDesign.body.p3}
-              <br />
-              <br />
-              {newDesign.body.p4}
-            </p>
+            <p className="section-content"> {newDesign.body.p1} </p>
+            <p className="section-content"> {newDesign.body.p2} </p>
+            <p className="section-content"> {newDesign.body.p3} </p>
+            <p className="section-content"> {newDesign.body.p4} </p>
           </section>
           <section className="study-section new-article-footer">
             <h2 id="article-footer" className="section-title">
               {newDesign.articleFooter.title}
             </h2>
             {getBtnImg("./share.png", "share-img")}
-            <p className="section-content">
-              {newDesign.articleFooter.p1}
-              <br />
-              <br />
-              {newDesign.articleFooter.p2}
-              <br />
-              <br />
-              {newDesign.articleFooter.p3}
-            </p>
+            <p className="section-content"> {newDesign.articleFooter.p1} </p>
+            <p className="section-content"> {newDesign.articleFooter.p2} </p>
+            <p className="section-content"> {newDesign.articleFooter.p3} </p>
           </section>
           <section className="study-section about">
             <h2 id="new-author" className="section-title">
               {newDesign.about.title}
             </h2>
             {getBtnImg("./new-about-author.png", "new-author-img")}
-            <p className="section-content">
-              {newDesign.about.p1}
-              <br />
-              <br />
-              {newDesign.about.p2}
-              <br />
-              <br />
-              {newDesign.about.p3}
-              <br />
-              <br />
-              {newDesign.about.p4}
-            </p>
+            <p className="section-content"> {newDesign.about.p1} </p>
+            <p className="section-content"> {newDesign.about.p2} </p>
+            <p className="section-content"> {newDesign.about.p3} </p>
+            <p className="section-content"> {newDesign.about.p4} </p>
           </section>
           <section className="study-section new-comments">
             <h2 id="new-comments" className="section-title">
               {newDesign.comments.title}
             </h2>
             {getBtnImg("./new-comments.png", "new-comments-img")}
-            <p className="section-content">
-              {newDesign.comments.p1}
-              <br />
-              <br />
-              {newDesign.comments.p2}
-              <br />
-              <br />
-              {newDesign.comments.p3}
-              <br />
-              <br />
-              {newDesign.comments.p4}
-              <br />
-              <br />
-              {newDesign.comments.p5}
-              <br />
-              <br />
-              {newDesign.comments.p6}
-              <br />
-              <br />
-              {newDesign.comments.p7}
-              <br />
-              <br />
-              {newDesign.comments.p8}
-              <br />
-              <br />
-              {newDesign.comments.p9}
-              <br />
-              <br />
-              {newDesign.comments.p10}
-              <br />
-              <br />
-              {newDesign.comments.p11}
-              <br />
-              <br />
-              {newDesign.comments.p12}
-              <br />
-              <br />
-              {newDesign.comments.p13}
-              <br />
-              <br />
-              {newDesign.comments.p14}
-              <br />
-              <br />
-              {newDesign.comments.p15}
-              <br />
-              <br />
-              {newDesign.comments.p16}
-              <br />
-              <br />
-              {newDesign.comments.p17}
-              <br />
-              <br />
-              {newDesign.comments.p18}
-              <br />
-              <br />
-              {newDesign.comments.p19}
-            </p>
+            <p className="section-content">{newDesign.comments.p1}</p>
+            <p className="section-content">{newDesign.comments.p2}</p>
+            <p className="section-content">{newDesign.comments.p3}</p>
+            <p className="section-content">{newDesign.comments.p4}</p>
+            <p className="section-content">{newDesign.comments.p5}</p>
+            <p className="section-content">{newDesign.comments.p6}</p>
+            <p className="section-content">{newDesign.comments.p7}</p>
+            <p className="section-content">{newDesign.comments.p8}</p>
+            <p className="section-content">{newDesign.comments.p9}</p>
+            <p className="section-content">{newDesign.comments.p10}</p>
+            <p className="section-content">{newDesign.comments.p11}</p>
+            <p className="section-content">{newDesign.comments.p12}</p>
+            <p className="section-content">{newDesign.comments.p13}</p>
+            <p className="section-content">{newDesign.comments.p14}</p>
+            <p className="section-content">{newDesign.comments.p15}</p>
+            <p className="section-content">{newDesign.comments.p16}</p>
+            <p className="section-content">{newDesign.comments.p17}</p>
+            <p className="section-content">{newDesign.comments.p18}</p>
+            <p className="section-content">{newDesign.comments.p19}</p>
           </section>
           <section className="study-section new-footer">
             <h2 id="new-footer" className="section-title">
               {newDesign.footer.title}
             </h2>
             {getBtnImg("./new-footer.png", "new-footer-img")}
-            <p className="section-content">
-              {newDesign.footer.p1}
-              <br />
-              <br />
-              {newDesign.footer.p2}
-              <br />
-              <br />
-              {newDesign.footer.p3}
-              <br />
-              <br />
-              {newDesign.footer.p4}
-              <br />
-              <br />
-              {newDesign.footer.p5}
-              <br />
-              <br />
-              {newDesign.footer.p6}
-            </p>
+            <p className="section-content"> {newDesign.footer.p1} </p>
+            <p className="section-content"> {newDesign.footer.p2} </p>
+            <p className="section-content"> {newDesign.footer.p3} </p>
+            <p className="section-content"> {newDesign.footer.p4} </p>
+            <p className="section-content"> {newDesign.footer.p5} </p>
+            <p className="section-content"> {newDesign.footer.p6} </p>
           </section>
           <section className="study-section finale">
             <h2 id="finale" className="section-title">
               {newDesign.finale.title}
             </h2>
-            <p className="section-content">
-              {newDesign.finale.p1}
-              <br />
-              <br />
-              {newDesign.finale.p2}
-              <br />
-              <br />
-              {newDesign.finale.p3}
-              <br />
-              <br />
-              {newDesign.finale.p4}
-              <br />
-              <br />
-              {newDesign.finale.p5}
-            </p>
+            <p className="section-content"> {newDesign.finale.p1} </p>
+            <p className="section-content"> {newDesign.finale.p2} </p>
+            <p className="section-content"> {newDesign.finale.p3} </p>
+            <p className="section-content"> {newDesign.finale.p4} </p>
+            <p className="section-content"> {newDesign.finale.p5} </p>
           </section>
           {showButton()}
         </section>

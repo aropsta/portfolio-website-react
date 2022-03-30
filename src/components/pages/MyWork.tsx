@@ -90,8 +90,8 @@ export default function MyWork() {
         <section className="image-gallery">
           <img src={galleryItems[active].src} alt="click to enlarge image" />
 
-          <button onClick={nextGalleryItem} className="next"></button>
-          <button onClick={prevGalleryItem} className="prev"></button>
+          <button aria-label="Next project" onClick={nextGalleryItem} className="next"></button>
+          <button aria-label="Previous project" onClick={prevGalleryItem} className="prev"></button>
           <span className="counter">
             {counter.map((item, index) => {
               return (
