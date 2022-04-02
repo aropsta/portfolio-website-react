@@ -106,9 +106,7 @@ const Form = () => {
 
   const resultP = () => {
     if (submitted && !loading) {
-      console.log("SUBMITTED!! and LOADING!!");
       if (success) {
-        console.log("SUCESS!");
         return (
           <div className="sent blur">
             <p className="success">Sent successfully!</p>

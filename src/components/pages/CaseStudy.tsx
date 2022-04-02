@@ -30,23 +30,19 @@ export default function CaseStudy() {
     switch (where) {
       case "top": {
         if (breakPoint === "small") {
-          return <img src="./codeproject.png" alt="codeproject website logo" />;
+          return <img src="./codeproject.jpg" alt="codeproject website logo" />;
         } else return <></>;
       }
       case "bottom": {
         if (breakPoint === "small") return <></>;
-        else return <img src="./codeproject.png" alt="codeproject website logo" />;
+        else return <img src="./codeproject.jpg" alt="codeproject website logo" />;
 
         break;
       }
     }
     if (breakPoint === "small") {
-      return <img src="./codeproject.png" alt="codeproject website logo" />;
+      return <img src="./codeproject.jpg" alt="codeproject website logo" />;
     }
-  };
-
-  const returnBreak = () => {
-    if (breakPoint === "small") return <br />;
   };
 
   const getBtnImg = (src: string, cName: string) => {
@@ -221,9 +217,9 @@ export default function CaseStudy() {
     };
     return (
       <div className="img-compare">
-        <img className="img1" src="./new-design1.png" alt="Old website design" />
+        <img className="img1" src="./new-design.png" alt="New website design" />
         <span className="wrapper">
-          <img className="img2" src="./old-design1.png" alt="New website design" />
+          <img className="img2" src="./old-design.png" alt="Old website design" />
         </span>
         <label>
           <span className="sr-only">Select what percentage of old image to show</span>
@@ -237,17 +233,17 @@ export default function CaseStudy() {
     {
       tite: "AdoredTv",
       site: "https://adoredtv.com/",
-      src: "./adoredtv.png",
+      src: "./adoredtv.jpg",
     },
     {
       tite: "The Verge",
       site: "https://www.theverge.com/tech",
-      src: "./theverge.png",
+      src: "./theverge.jpg",
     },
     {
       tite: "ANANDTECH",
       site: "https://www.anandtech.com/",
-      src: "./anandtech.png",
+      src: "./anandtech.jpg",
     },
   ];
   const [active, setActiveSite] = useState(0);
@@ -527,7 +523,10 @@ export default function CaseStudy() {
             <h2 id="wireframe" className="section-title">
               {newDesign.wireframe.title}
             </h2>
-            {getBtnImg("./wireframe.jpg", "wireframe-img")}
+            <div>
+              {getBtnImg("./wireframe.webp", "wireframe-img")}
+              {getBtnImg("./wireframe2.png", "wireframe2-img")}
+            </div>
             <p className="section-content"> {newDesign.wireframe.p1} </p>
             <p className="section-content"> {newDesign.wireframe.p2} </p>
             <p className="section-content"> {newDesign.wireframe.p3} </p>

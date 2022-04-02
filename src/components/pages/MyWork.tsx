@@ -4,13 +4,13 @@ import "../../styles/my-work.scss";
 let galleryItems = [
   {
     tite: "base apparel",
-    site: "https://623c06ff2783f00009e0543c--naughty-visvesvaraya-8e9d40.netlify.app/",
+    site: "https://62480829997af100096cd432--naughty-visvesvaraya-8e9d40.netlify.app/",
     code: "https://github.com/aropsta/base-apparel-coming-soon_react",
     src: "./my-work/base-apparel.jpg",
   },
   {
     tite: "time tracking dashboard",
-    site: "https://61f3836f34bc9a0007fbbacf--jolly-hopper-43a522.netlify.app/",
+    site: "https://624807bf0db1b10009341f7e--jolly-hopper-43a522.netlify.app/",
     code: "https://github.com/aropsta/time-tracking-dashboard-main",
     src: "./my-work/time-tracking.jpg",
   },

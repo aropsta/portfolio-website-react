@@ -8,42 +8,42 @@
     },
     "analysis": {
       "title": "analysis - The old design",
-      "p1": "One of the first aspects of the design to stand out would be the contrast, or the lack thereof. Much of the typography has a similiar styling, in terms of weight and colour",
-      "p2": "The old design correctly used scale and a little of colour to help users discern the visual hierarchy on the page. This falls short however and doesn’t provide enough contrast between the different elements on the page, making the boundry between sections ambiguous. An improvment on the design could be incorporating different font weights as well as better section partitioning to make it easier for users to navigate. More details will be provided in the redesign.",
-      "p3": "The use of white and negative space is also apparent and provides acceptable clarity for the content on the page. However a great deal is neglected when we consider contrast, typographic and content scaling.",
+      "p1": "One of the first aspects of the design to stand out would be the contrast, or the lack thereof. Much of the typography has a similar styling, in terms of weight and color",
+      "p2": "The old design correctly used scale and a little of color to help users discern the visual hierarchy on the page. This falls short however and doesn’t provide enough contrast between the different elements on the page, making the boundary between sections ambiguous. An improvement on the design could be incorporating different font weights as well as better section partitioning to make it easier for users to navigate. More details will be provided in the redesign.",
+      "p3": "The use of white and negative space is also apparent and provides acceptable clarity for the content on the page. However, a great deal is neglected when we consider contrast, typographic and content scaling.",
       "p4": "Let's break things down by section"
     },
     "articleTitle": {
       "title": "article title",
-      "p1": "Beginning with the header of the article, It's perfectly acceptable as it is. It is the largest heading indicating greatest importance. Two improvements we can make is to bold the heading font, to provide a little better contrast, and decreasing the font size ever slightly, giving us a less explosive typography scaling."
+      "p1": "Beginning with the header of the article, it’s perfectly acceptable as it is. It is the largest heading indicating greatest importance. Two improvements we can make is to bold the heading font, to provide a little better contrast, and decreasing the font size ever slightly, giving us a less explosive typography scaling."
     },
     "authorSection": {
       "title": "author section",
       "p1": "Here, a large space has been allocated to the introduction of the author... Or the introduction of the article.",
-      "p2": "We have a photo and estimated read time for the article, but there is also the published date of the article and the rating. It is unclear whether  the rating is for the author or the article itself. ",
+      "p2": "We have a photo and estimated read time for the article, but there is also the published date of the article and the rating. It is unclear whether the rating is for the author or the article itself. ",
       "p3": "This ambiguity works to confuse the user as to nature of the information they are presented.",
-      "p4": "Another peculiar aspect of the design is the inclusion of a simliar section at the end of the article; named “about the author”.",
+      "p4": "Another peculiar aspect of the design is the inclusion of a similar section at the end of the article; named “about the author”.",
       "p5": "But this has even less information than the first section!",
-      "p6": "The grouping of this information is suspect. Article information, like estimated read time and publish date, should be seperate from information about the author, like his rating.",
+      "p6": "The grouping of this information is suspect. Article information, like estimated read time and publish date, should be separate from information about the author, like his rating.",
       "p7": "If there is an image of the author at the end there is no need for one at the start. It simply takes away space and attention from the article, for that reason it should be presented toward the end.",
       "p8": "For those who are interest in the author, they will, through reading the article be able to find more details toward the end."
     },
     "body": {
       "title": "body",
       "p1": "The main body of an article doesn't require much thought from a UI/UX standpoint. So long as there is sufficient whitespace and contrast between the headings, there isn't much else you can do, without doing too much.",
-      "p2": "Here we have a clear typographic hierarchy with headings being a larger font and a bright colour. The scaling is a little jarring between the headings and body, so we can opt to tone  it down. ",
-      "p3": "There is little need to overcomplicate the body through the use of colour. A bold heading is plenty enough to provide sufficient visual hierarchy"
+      "p2": "Here we have a clear typographic hierarchy with headings being a larger font and a bright color. The scaling is a little jarring between the headings and body, so we can opt to tone it down. ",
+      "p3": "There is little need to overcomplicate the body with color. A bold heading is plenty enough to provide sufficient visual hierarchy"
     },
     "comments": {
       "title": "comments and discussions",
       "p1": "If there is one part of this webpage that requires a complete overhaul, it is the discussions section. Where do we even begin?",
       "p2": "Did you know that each of these 'comments' are, in fact, threads? What you see is just the title. Each entry is a question/comment or suggestion can be expanded to reveal its details.",
       "p3": "Unless a user clicks on a 'comment', there is no other way, visually for them to know that they were expandable threads.",
-      "p4": "From a UX design persepective, this is not a good implementation of a community discussions section.",
-      "p5": "Let’s focus our attention now on the good aspects of this design. There is clear spacing and it is easy to differentiate between different entries. This is achieved through a dotted line as well as the unique typography for the thread title.",
+      "p4": "From a UX design perspective, this is not a good implementation of a community discussions section.",
+      "p5": "Let’s focus our attention now on the good aspects of this design. There is clear spacing, and it is easy to differentiate between different entries. This is achieved through a dotted line as well as the unique typography for the thread title.",
       "p6": "Almost as if to try and 'fix' the perverse design, the developer or original creator was forced to put in an option to either expand all threads, expand only those with replies or collapse all.",
       "p7": "Again, without investigating these options, the user would be unaware of the true nature of this comments’ section. It's evil!",
-      "p8": "Lastly, there is the useless drop down menu to change the spacing of the comments section. In the past this may have had some use, but in modern times there is no benefit to having such a 'feature'.",
+      "p8": "Lastly, there is the useless drop-down menu to change the spacing of the comments section. In the past this may have had some use, but in modern times there is no benefit to having such a 'feature'.",
       "p9": "It's better not to over complicate and clutter something which could otherwise be simple.",
       "p10": "The refresh button toward the bottom can also be done away with. It is a simple matter keep basic information like comments updated automatically.",
       "p11": "All of that aside, everything else here; the pagination, refresh link, the icon legend are all standards when it comes to the design of a comments section. The user interface could use a little work however."
@@ -57,15 +57,15 @@
     "footer": {
       "title": "footer",
       "p1": "We now come to the last section of the page. This area would see the least user traffic. so there is no great incentive to put in a great deal of detail for it.",
-      "p2": "Regardless it should still fit the overall theme of the site, while being concise with the necessary information that a footer requires. The 'layout' option can be removed. It does nothing more than decrease the article margins, so that it takes up more horizontal spacing.",
+      "p2": "Regardless of it should still fit the overall theme of the site, while being concise with the necessary information that a footer requires. The 'layout' option can be removed. It does nothing more than decrease the article margins, so that it takes up more horizontal spacing.",
       "p3": "Features to change the page layout are unnecessary",
       "p4": "With the analysis complete, let's go to the redesign!"
     }
   },
   "newDesign": {
     "research": {
-      "title": "research phase and competetive analysis",
-      "p1": "Before any design or drafting work commenced, similiar sites were researched for design consideration and inspiration.",
+      "title": "research phase and competitive analysis",
+      "p1": "Before any design or drafting work commenced, similar sites were researched for design consideration and inspiration.",
       "p2": "They are well established businesses in the tech industry. All publish various articles on consumer technology, both in software and hardware. All relevant choices to help steer the redesign of CodeProject in the right direction.",
       "p3": "References were taken from sites such as anandtech, adoredtv, thevergetech among others to advise on UX and UI design patterns.",
       "p4": "The final design combines various design patterns taken from these well established sites as well as the addition of my own inspiration where there were no available references to take from."
@@ -73,13 +73,13 @@
     "conclusions": {
       "title": "analysis conclusions",
       "p1": "A common foundation between all these sites is the clear heading which grabs your attention before you even look at the page! It is bold with contrast and much larger in font compared to the rest of article. The typographic scaling makes it clear that this is the centerpiece for the following content.",
-      "p2": "In comparison, CodeProjects headings have sufficient scale, but  severely lack in contrast",
+      "p2": "In comparison, CodeProjects headings have sufficient scale, but severely lack in contrast",
       "p3": "The large section we had for the author information is really put into perspective when we analyze the same section for these established sites. They all use only a single line to present this content.",
-      "p4": "The authors name, published date and the relevant topic or tags associated with the article, do not take away attention from the article. They aren’t  excessively big or have excessive white space or irrelevant information crammed in.",
+      "p4": "The authors name, published date and the relevant topic or tags associated with the article, do not take away attention from the article. They aren’t excessively big or have excessive white space or irrelevant information crammed in.",
       "p5": "The comment sections are also similar between adoredtv.com and anandtech.com (the verge doesn't have comments section).",
-      "p6": "We have the main comment, with it’s date and user, followed by subsequent replies being in the same style as the original comment, however indented slightly.",
-      "p7": "The user name is in both cases bolded and colored differently to express it’s importance.",
-      "p8": "The date follows a similar but opposing pattern. The font weight is lighter and a more neutral colour.",
+      "p6": "We have the main comment, with its date and user, followed by subsequent replies being in the same style as the original comment, however indented slightly.",
+      "p7": "The username is in both cases bolded and colored differently to express its importance.",
+      "p8": "The date follows a similar but opposing pattern. The font weight is lighter and a more neutral color.",
       "p9": "Visual hierarchy is not always about making things stand out more, sometimes we want things to stand out less.",
       "p10": "Although our comment 'thread' is different than to these basic comment sections, we will nonetheless take into consideration their designs for further reference.",
       "p11": "With this we can finally begin the drafting stage for our redesign of CodeProject.com"
@@ -88,50 +88,50 @@
       "title": "wireframe",
       "p1": "The redesign begins with a wireframe. This will give a starting point to build upon.",
       "p2": "Attempting to create a new design from scratch in your design software can be an excessive waste of time.",
-      "p3": "Pen and paper are fast, and the approximation is sufficient for our needs.",
-      "p4": "At this stage, a general layout is what we require and we can go from there in adding further detail.",
+      "p3": "That is why the wireframe was first created in pen and paper, before a more fleshed out version was made in Figma. A more detailed version can be crucial to most clearly communicate the design to clients. For our purposes the pen and paper wireframe were sufficient.",
+      "p4": "At this stage, a general layout is what we require, and we can go from there in adding further detail.",
       "p5": "Yes, I know the logo looks kinda funny :-)"
     },
     "navigation": {
       "title": "navigation and header",
-      "p1": "Beggining with the header, we have opted to move the navigation links into the orange logo section.",
+      "p1": "Beginning with the header, we have opted to move the navigation links into the orange logo section.",
       "p2": "This serves two purposes. One, it unifies the header into a single component, and two, it utilizes the large open space adjacent to the logo that went previously unused.",
       "p3": "The sign-in link was made into a button and moved to this area. It was hard to find before as it was above the header and even above the logo on the far right.",
-      "p4": "It’s design and contrast implies a similiar importance to the active link in the navigation bar. A great deal of functionality can be lost for users without an account, this incentivises a login or sign-up if they are not registered.",
+      "p4": "It’s design and contrast imply a similar importance to the active link in the navigation bar. A great deal of functionality can be lost for users without an account, this incentivizes a login or sign-up if they are not registered.",
       "p5": "An underline was applied to the sub-navigation links. Each of the links were clickable but we had no way of knowing that before. Good UX design principles suggest that it is important to visually present functionality to the user wherever possible.",
       "p6": "We also change the spacer from a forward slash '/' to a right arrow or chevron. This change is for non-technical users who might not know that that forward slash '/' is a filesystem operator which tells you your working directory. This sort of jargon should be kept in the article and not in crucial site functionality."
     },
     "header": {
       "title": "article header",
-      "p1": "No more is the large author header above the article. It has been trimmed down its bare essentials: the author, and published date. All excess information has been moved down to the bottom of the article in a new section, called 'About the author'. This is a standard section present in most types of article sites.",
+      "p1": "No more is the large author header above the article. It has been trimmed down its essentials: the author, and published date. All excess information has been moved down to the bottom of the article in a new section, called 'About the author'. This is a standard section present in most types of article sites.",
       "p2": "It's not present in the wireframe, but we have also opted to add the miscellaneous information from the aside to this same area. Refer to the final design.",
       "p3": "All clickable links, including all of the tags were given an underline to express their functionality. With no underlines for non-links."
     },
     "body": {
       "title": "body",
       "p1": "The title is made slightly smaller to give a more uniform typographic scaling within the article. It was also given semi-bold font weight for a little extra importance on the page.",
-      "p2": "We added a new secondary colour to the overall design. This new colour was taken from the logo, so it blends nicely with the theme.",
-	  "p3": "The estimated read time was added to just under the article title. It is similar in style to the prologue just before the article preface, but it has been bolded and given the new secondary colour.",
+      "p2": "We added a new secondary color to the overall design. This new color was taken from the logo, so it blends nicely with the theme.",
+	  "p3": "The estimated read time was added to just under the article title. It is similar in style to the prologue just before the article preface, but it has been bolded and given the new secondary color.",
       
-      "p4": "The colour of the subheadings was also removed. A larger font and semi-bold weight is enough to convey importance. There is no need for excess colour within an article."
+      "p4": "The color of the subheadings was also removed. A larger font and semi-bold weight is enough to convey importance. There is no need for excess color within an article."
     },
     "articleFooter": {
       "title": "article footer",
       "p1": "Not much to say for this section. We added a share subheading, followed by various social media links for sharing the article.",
-      "p2": "Consideration was made whether to give all the logos the same colour, in line with the site theme, or to have them in their respective theme colors. Both are valid options but varying colors was chosen to add extra flare to the our page.",
-      "p3": "This splash of colour can serve as a breath of fresh air before the sites theme is resumed next section."
+      "p2": "Consideration was made whether to give all the logos the same color, in line with the site theme, or to have them in their respective theme colors. Both are valid options, but varying colors was chosen to add extra flare to our page.",
+      "p3": "This splash of color can serve as a breath of fresh air before the sites theme is resumed next section."
     },
     "about": {
       "title": "about the author",
-      "p1": "This is a completely new section, created from the old and cumbersome predecessor, which was needlessly placed before the  actual article. Here is where users can garner further information about the author: their location, occupation and a small biography.",
-      "p2": "Social media links and the rating section can also be found here. All concisely within one place. The social media links here were given all a uniform colour, to make clear that they do not serve the same function as the colored links. One is for sharing the article, and the others are for following the author",
+      "p1": "This is a completely new section, created from the old and cumbersome predecessor, which was needlessly placed before the actual article. Here is where users can garner further information about the author: their location, occupation and a small biography.",
+      "p2": "Social media links and the rating section can also be found here. All concisely within one place. The social media links here were given all a uniform color, to make clear that they do not serve the same function as the colored links. One is for sharing the article, and the others are for following the author",
       "p3": "A drop shadow was added to this section to give it visual distinction from the article content and the comments section. This styling suggests the section to be a sort of digital business card.",
       "p4": "White space was utilized around and within this card to make it easy on the eyes with clear contrast between its different parts."
     },
     "comments": {
       "title": "comments and discussions",
-      "p1": "This is where we will see the most drastic changes of the redesign. Very little of the old comments section remains, save for the old header and footer. They served as good landmarks which contained this particular section so there was little incentive to reimplement them.",
-      "p2": "The most apparant change to note would be the colour. We applied our new secondary colour to the header and footer sections of the comments.",
+      "p1": "This is where we will see the most drastic changes of the redesign. Very little of the old comments section remains, save for the old header and footer. They served as good landmarks which contained this section so there was little incentive to reimplement them.",
+      "p2": "The most apparent change to note would be the color. We applied our new secondary color to the header and footer sections of the comments.",
       "p3": "The bright lime green almost creates a duality the page, marked by the upper bright orange and lower bright green.",
       "p4": "All thread entries are now expanded with their details in full view by default. Before we could only view the title, with no indication that we could expand it to view the details.",
       "p5": "The clarity of the titles will come from their contrast with their background. We have a dark, bold font, accompanied by a white backdrop with a slight drop shadow to give indicate a greater hierarchy.",
@@ -139,16 +139,16 @@
       "p7": "The body text is regular styling with the base font size. It is differentiated from the other parts of the comment by the fact that it doesn't stand out compared to the rest of the elements. We then end with the user who posted the comment, and the repliers, if any.",
       "p8": "The threaded nature of the comments has been made obvious by the fact that users can now see an option on each comment to view the replies.",
       "p9": "They can see the number of replies, and a small amount of text about the users who replied. This text is underlined which conveys it has function.",
-      "p10": "This is further emphasized by the chevron icon. A standard UX design feature for drop down menus. However in this case it is an expandable section.",
-      "p11": "Let's go back to the header for a little bit. It is multilayered. First being the green banner which allows users to toggle the layout and select how many comments they want to view per page of the section.",
-      "p12": "Second is the search bar for the comments, which has been moved into the header for better integration. Lastly we have the pagination and icon legend.",
-      "p13": "We have removed the old 'spacing' selector, the update button and some options for the layout selector. Users shouldn't have options built for them for 'fixing' a deficient layout, should it designed correctly from the start.",
+      "p10": "This is further emphasized by the chevron icon. A standard UX design feature for drop down menus. However, in this case it is an expandable section.",
+      "p11": "Let's go back to the header for a little bit. It is multilayered. First being the green banner, which allows users to toggle the layout and select how many comments they want to view per page of the section.",
+      "p12": "Second is the search bar for the comments, which has been moved into the header for better integration. Lastly, we have the pagination and icon legend.",
+      "p13": "We have removed the old 'spacing' selector, the update button and some options for the layout selector. Users shouldn't have options built for them for 'fixing' a deficient layout, should it design correctly from the start.",
       "p14": "The same goes for the update button. Comments will now be automatically updated, further simplifying the header for us.",
-      "p15": "Finally for the layout selector, we only have two option: collapse all, and expand all. It should now be no longer ambiguous the true nature of the 'comments' section: a 'thread' section",
+      "p15": "Finally for the layout selector, we only have two options: collapse all, and expand all. It should now be no longer ambiguous the true nature of the 'comments' section: a 'thread' section",
       "p16": "The legend was previously at the bottom of section, which seemed kind of silly since that is what new users would want to see first before the use of the various icons.",
       "p17": "It has been added on the same level as the pagination where users can navigate the pages of the comments. Previously this part was mostly empty except for the page navigation.",
       "p18": "It fits nicely the legend of the various icons that accompany the comments.",
-      "p19": "This design a great improvement from nearly every aspect. Everything is clearer and more concise; everything has function and the only wasted space is intentionally done for even better clarity!"
+      "p19": "This designs a great improvement from nearly every aspect. Everything is clearer and more concise; everything has function and the only wasted space is intentionally done for even better clarity!"
     },
     "footer": {
       "title": "footer",
@@ -161,7 +161,7 @@
     },
     "finale": {
       "title": "final thoughts",
-      "p1": "The redesign improves on many aspects. We have less extreneous detail where it is not needed, more detail where it was and changes were only made where they were required. This  metamorphsis was mostly functional rather than aesthetic.",
+      "p1": "The redesign improves on many aspects. We have less extraneous detail where it is not needed, more detail where it was, and changes were only made where they were required. This metamorphosis was mostly functional rather than aesthetic.",
       "p2": "With that, we are finished! I really enjoyed making this case study and creating this new redesign. I was able to really exercise my UI and UX design abilities.",
       "p3": "Thing flowed wonderfully and moved forward consistently. I was never stuck and never at a loss for words. I intuitively knew what needed to be done and how it should be conveyed.",
       "p4": "Thanks for reading and I hope you enjoyed this journey as well!",

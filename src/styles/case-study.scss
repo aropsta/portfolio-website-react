@@ -509,6 +509,7 @@ main {
   .outter-div {
     display: flex;
     flex-direction: column;
+    grid-gap: 1.5rem;
     :last-child {
       width: 100%;
       height: auto;
@@ -574,6 +575,11 @@ main {
       object-position: 50% 10%;
     }
   }
+  div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 
   .section-title {
     flex: 1 0 1fr;
@@ -582,6 +588,10 @@ main {
     flex: 1 1 1fr;
   }
   @media (min-width: $mobile-breakpoint) {
+    div {
+      flex-direction: row;
+      height: 100%;
+    }
     img {
       object-fit: cover;
       object-position: 50% 10%;
