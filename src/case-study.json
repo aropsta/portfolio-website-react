@@ -57,8 +57,8 @@
     "footer": {
       "title": "footer",
       "p1": "We now come to the last section of the page. This area would see the least user traffic. so there is no great incentive to put in a great deal of detail for it.",
-      "p2": "Regardless of it should still fit the overall theme of the site, while being concise with the necessary information that a footer requires. The 'layout' option can be removed. It does nothing more than decrease the article margins, so that it takes up more horizontal spacing.",
-      "p3": "Features to change the page layout are unnecessary",
+      "p2": "Regardless, it should still fit the overall theme of the site, while being concise with the necessary information that a footer requires. The 'layout' option can be removed. It does nothing more than decrease the article margins, so that it takes up more horizontal spacing.",
+      "p3": "Features to change the page layout are unnecessary.",
       "p4": "With the analysis complete, let's go to the redesign!"
     }
   },
@@ -67,7 +67,7 @@
       "title": "research phase and competitive analysis",
       "p1": "Before any design or drafting work commenced, similar sites were researched for design consideration and inspiration.",
       "p2": "They are well established businesses in the tech industry. All publish various articles on consumer technology, both in software and hardware. All relevant choices to help steer the redesign of CodeProject in the right direction.",
-      "p3": "References were taken from sites such as anandtech, adoredtv, thevergetech among others to advise on UX and UI design patterns.",
+      "p3": "References were taken from sites such as anandtech, adoredtv, thevergetech and among others to advise on UX and UI design patterns.",
       "p4": "The final design combines various design patterns taken from these well established sites as well as the addition of my own inspiration where there were no available references to take from."
     },
     "conclusions": {
@@ -109,7 +109,7 @@
     },
     "body": {
       "title": "body",
-      "p1": "The title is made slightly smaller to give a more uniform typographic scaling within the article. It was also given semi-bold font weight for a little extra importance on the page.",
+      "p1": "The headings were made slightly smaller to give a more uniform typographic scaling within the article. They were was also given semi-bold font weight for a little extra importance on the page.",
       "p2": "We added a new secondary color to the overall design. This new color was taken from the logo, so it blends nicely with the theme.",
 	  "p3": "The estimated read time was added to just under the article title. It is similar in style to the prologue just before the article preface, but it has been bolded and given the new secondary color.",
       
@@ -125,17 +125,17 @@
       "title": "about the author",
       "p1": "This is a completely new section, created from the old and cumbersome predecessor, which was needlessly placed before the actual article. Here is where users can garner further information about the author: their location, occupation and a small biography.",
       "p2": "Social media links and the rating section can also be found here. All concisely within one place. The social media links here were given all a uniform color, to make clear that they do not serve the same function as the colored links. One is for sharing the article, and the others are for following the author",
-      "p3": "A drop shadow was added to this section to give it visual distinction from the article content and the comments section. This styling suggests the section to be a sort of digital business card.",
+      "p3": "A drop shadow was added to this section to give it visual distinction from the article content and the comments section. This styling suggests this section to be a sort of digital business card.",
       "p4": "White space was utilized around and within this card to make it easy on the eyes with clear contrast between its different parts."
     },
     "comments": {
       "title": "comments and discussions",
       "p1": "This is where we will see the most drastic changes of the redesign. Very little of the old comments section remains, save for the old header and footer. They served as good landmarks which contained this section so there was little incentive to reimplement them.",
       "p2": "The most apparent change to note would be the color. We applied our new secondary color to the header and footer sections of the comments.",
-      "p3": "The bright lime green almost creates a duality the page, marked by the upper bright orange and lower bright green.",
+      "p3": "The bright lime green almost creates a duality on page, marked by the upper bright orange and lower bright green.",
       "p4": "All thread entries are now expanded with their details in full view by default. Before we could only view the title, with no indication that we could expand it to view the details.",
       "p5": "The clarity of the titles will come from their contrast with their background. We have a dark, bold font, accompanied by a white backdrop with a slight drop shadow to give indicate a greater hierarchy.",
-      "p6": "The title of the thread. The pin icon has been made bigger and given a dark color that should now also stand out along with the text. ",
+      "p6": "The pin icon has been made bigger and given a dark color that should now also stand out along with the text. ",
       "p7": "The body text is regular styling with the base font size. It is differentiated from the other parts of the comment by the fact that it doesn't stand out compared to the rest of the elements. We then end with the user who posted the comment, and the repliers, if any.",
       "p8": "The threaded nature of the comments has been made obvious by the fact that users can now see an option on each comment to view the replies.",
       "p9": "They can see the number of replies, and a small amount of text about the users who replied. This text is underlined which conveys it has function.",
