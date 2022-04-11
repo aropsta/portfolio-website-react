@@ -153,7 +153,7 @@ function Home() {
             <h2 className="title">Design</h2>
             <p>
               I can create mockups, wireframes, basic logos or design system, based on an underlying
-              product image
+              brand image
             </p>
           </section>
 
@@ -163,8 +163,9 @@ function Home() {
             </svg>
             <h3 className="title">Develop</h3>
             <p>
-              Solid development foundation in various technolgies: <b>Typescript</b>, <b>Reactjs</b>{" "}
-              Javascript, semnatic and accessible HTML, css <b>and much more</b> (refer to resume)
+              Solid development foundation in various technologies: <b>Typescript</b>,{" "}
+              <b>Reactjs</b> Javascript, semnatic and accessible HTML, responsive css{" "}
+              <b>and more</b>
             </p>
           </section>
 
@@ -174,8 +175,8 @@ function Home() {
             </svg>
             <h3 className="title">Self-sufficient</h3>
             <p>
-              Can operate autonomously with little direction, take the inititive to make decsions
-              and escalte/inquire when required. All according to project outcomes
+              Can operate autonomously with little direction, take the initiative to make decisions
+              and escalate/inquire when required. All according to project outcomes
             </p>
           </section>
 
@@ -186,7 +187,7 @@ function Home() {
             <h3 className="title">Collaborate</h3>
             <p>
               I am capable team member, with proven leadership skills in academic roles. Experienced
-              in utilizing collabrative tools git and figma jam
+              in utilizing collaborative tools git and figma jam
             </p>
           </section>
         </div>
