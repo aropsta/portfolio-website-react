@@ -192,7 +192,7 @@ function Home() {
         </div>
 
         <section className="technical">
-          <h3>Tenchincal skills</h3>
+          <h3>Technical skills</h3>
           <ul>
             <li className="skill">JavaScript</li>
             <li className="skill">C</li>
