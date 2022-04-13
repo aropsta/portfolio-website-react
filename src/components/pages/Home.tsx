@@ -152,8 +152,8 @@ function Home() {
             </svg>
             <h2 className="title">Design</h2>
             <p>
-              I can create mockups, wireframes, basic logos or design system, based on an underlying
-              brand image
+              UI designer skilled in optimizing work processes to enhance user experiences and
+              deliver products that are simple and easy to use
             </p>
           </section>
 
@@ -163,9 +163,8 @@ function Home() {
             </svg>
             <h3 className="title">Develop</h3>
             <p>
-              Solid development foundation in various technologies: <b>Typescript</b>,{" "}
-              <b>Reactjs</b> Javascript, semnatic and accessible HTML, responsive css{" "}
-              <b>and more</b>
+              Coder who has a keen interest for optimization and performance. Experienced in WCAG
+              2.1 with responsiveness and accessibility always in mind
             </p>
           </section>
 
@@ -175,8 +174,8 @@ function Home() {
             </svg>
             <h3 className="title">Self-sufficient</h3>
             <p>
-              Can operate autonomously with little direction, take the initiative to make decisions
-              and escalate/inquire when required. All according to project outcomes
+              Able to operate autonomously and take initiative when most practical. Always within
+              the scope of project outcomes
             </p>
           </section>
 
@@ -191,6 +190,27 @@ function Home() {
             </p>
           </section>
         </div>
+
+        <section className="technical">
+          <h3>Tenchincal skills</h3>
+          <ul>
+            <li className="skill">JavaScript</li>
+            <li className="skill">C</li>
+            <li className="skill">HTML</li>
+            <li className="skill">WAI-ARIA</li>
+            <li className="skill">SQL</li>
+            <li className="skill">C++</li>
+            <li className="skill">UML</li>
+            <li className="skill">CSS</li>
+            <li className="skill">SASS</li>
+            <li className="skill">React</li>
+            <li className="skill">TypeScript</li>
+            <li className="skill">Java</li>
+            <li className="skill">jQuery</li>
+            <li className="skill">Git</li>
+            <li className="skill">Figma</li>
+          </ul>
+        </section>
         <a className="cta" href="#work">
           view my work
         </a>
@@ -216,6 +236,21 @@ function Home() {
           {getImg("bottom")}
         </section>
 
+        <section className="functional">
+          <h3>Functional skills</h3>
+          <p className="">
+            <b>Clear communicative ability</b>—Demonstrated in group projects and previous roles
+          </p>
+          <p>
+            <b>Adaptive Learner</b>—Proven by initiative and drive shown in academic career
+          </p>
+          <p>
+            <b>Strong problem-solving</b> capability—gained from technical and math related units
+          </p>
+          <p>
+            Ability to <b>effectively conceptualize</b> and materialize thoughts and idea’s
+          </p>
+        </section>
         <section className="questionaire">
           <h3 className="section-title">What I think of...</h3>
 
