@@ -82,7 +82,8 @@ export default function MyWork() {
         <header className="">
           <h1 id="work-showcase">Work showcase gallary </h1>
           <p>
-            All sites are fully responsive and look great on all screen sizes and modern browsers
+            All sites are fully responsive and compliment with the WCAG 2 specification, guided by
+            WebAIM's 2.0 checklist.
           </p>
         </header>
 
