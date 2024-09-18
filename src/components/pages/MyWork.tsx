@@ -1,68 +1,6 @@
 import React, { useState } from "react";
 import "../../styles/my-work.scss";
-
-let galleryItems = [
-  {
-    tite: "Game Hub",
-    site: "game-library-psi.vercel.app",
-    code: "https://github.com/aropsta/game-library",
-    src: "./game-library.png",
-  },
-  {
-    tite: "Issue Tracker",
-    site: "https://issue-tracker-iwav.vercel.app/",
-    code: "https://github.com/aropsta/issue-tracker",
-    src: "./dashboard.png",
-  },
-  {
-    tite: "base apparel",
-    site: "https://62480829997af100096cd432--naughty-visvesvaraya-8e9d40.netlify.app/",
-    code: "https://github.com/aropsta/base-apparel-coming-soon_react",
-    src: "./my-work/base-apparel.jpg",
-  },
-  {
-    tite: "time tracking dashboard",
-    site: "https://624807bf0db1b10009341f7e--jolly-hopper-43a522.netlify.app/",
-    code: "https://github.com/aropsta/time-tracking-dashboard-main",
-    src: "./my-work/time-tracking.jpg",
-  },
-  {
-    tite: "tip calculator",
-    site: "https://aropsta.github.io/tip-calculator-app-main/",
-    code: "https://github.com/aropsta/tip-calculator-app-main",
-    src: "./my-work/tip-calculator.jpg",
-  },
-  {
-    tite: "four-card feature section",
-    site: "https://aropsta.github.io/four-card-feature-section-master/",
-    code: "https://github.com/aropsta/four-card-feature-section-master",
-    src: "./my-work/four-card.jpg",
-  },
-  {
-    tite: "three-column preview card",
-    site: "https://aropsta.github.io/3-column-preview-card-component-main/",
-    code: "https://github.com/aropsta/3-column-preview-card-component-main",
-    src: "./my-work/three-column.jpg",
-  },
-  {
-    tite: "single price grid component",
-    site: "https://aropsta.github.io/single-price-grid-component-master/",
-    code: "https://github.com/aropsta/single-price-grid-component-master",
-    src: "./my-work/single-price.jpg",
-  },
-  {
-    tite: "order summary component",
-    site: "https://aropsta.github.io/order-summary-component-main/",
-    code: "https://github.com/aropsta/order-summary-component-main",
-    src: "./my-work/order-summary.jpg",
-  },
-  {
-    tite: "my website",
-    site: "https://arob-deng-portfolio.netlify.app/",
-    code: "https://github.com/aropsta/portfolio-website-react",
-    src: "./my-work/my-site.png",
-  },
-];
+import { galleryItems } from "./Home";
 
 let counter = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 export default function MyWork() {
@@ -101,7 +39,7 @@ export default function MyWork() {
 
         <h2>{galleryItems[active].tite} </h2>
         <section className="image-gallery">
-          <img src={galleryItems[active].src} alt="click to enlarge image" />
+          <img src={galleryItems[active].src} alt="click to enlarge" />
 
           <button
             aria-label="Next project"

@@ -56,7 +56,7 @@ let quotes = [
   },
 ];
 
-let galleryItems = [
+export const galleryItems = [
   {
     tite: "Issue Tracker",
     site: "https://issue-tracker-iwav.vercel.app/",
@@ -65,21 +65,21 @@ let galleryItems = [
   },
   {
     tite: "Game Hub",
-    site: "game-library-psi.vercel.app",
+    site: "https://game-library-psi.vercel.app",
     code: "https://github.com/aropsta/game-library",
     src: "./game-library.png",
   },
   {
-    tite: "base apparel",
-    site: "https://623c06ff2783f00009e0543c--naughty-visvesvaraya-8e9d40.netlify.app/",
-    code: "https://github.com/aropsta/base-apparel-coming-soon_react",
-    src: "./my-work/base-apparel.jpg",
-  },
-  {
     tite: "time tracking dashboard",
-    site: "https://61f3836f34bc9a0007fbbacf--jolly-hopper-43a522.netlify.app/",
+    site: "https://time-tracking-dashboard-main-beta.vercel.app/",
     code: "https://github.com/aropsta/time-tracking-dashboard-main",
     src: "./my-work/time-tracking.jpg",
+  },
+  {
+    tite: "base apparel",
+    site: "https://aropsta.github.io/base-apparel-coming-soon-master/",
+    code: "https://github.com/aropsta/base-apparel-coming-soon-master",
+    src: "./my-work/base-apparel.jpg",
   },
   {
     tite: "tip calculator",
@@ -113,8 +113,8 @@ let galleryItems = [
   },
   {
     tite: "my website",
-    site: "base apparel",
-    code: "base apparel",
+    site: "https://portfolio-website-react-zeta.vercel.app/",
+    code: "https://github.com/aropsta/portfolio-website-react",
     src: "./my-work/my-site.png",
   },
 ];
@@ -400,7 +400,7 @@ function Home() {
               aria-label={`Go to ${galleryItems[1].tite}`}
               target="_black"
               rel="noopener noreferrer"
-              href={galleryItems[2].site}
+              href={galleryItems[1].site}
             >
               <img src="./game-library.png" alt="" />
             </a>
