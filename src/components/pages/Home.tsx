@@ -76,6 +76,12 @@ export const galleryItems = [
     src: "./my-work/time-tracking.jpg",
   },
   {
+    tite: "API Data fetcher",
+    site: "https://nbl-tech-challange.vercel.app/",
+    code: "https://github.com/aropsta/data-fetch-api",
+    src: "./api.png",
+  },
+  {
     tite: "base apparel",
     site: "https://aropsta.github.io/base-apparel-coming-soon-master/",
     code: "https://github.com/aropsta/base-apparel-coming-soon-master",
