@@ -86,18 +86,20 @@ const Form = () => {
   const sendEmail = () => {
     submitForm(true);
     setLoading(true);
-    emailjs.send("service_jg9eb2q", "template_73aayf3", values, "vRPeubQbjqke4IyjA").then(
-      (response) => {
-        console.log("SUCCESS", response);
-        setSucess(true);
-        setLoading(false);
-      },
-      (error) => {
-        console.log("FAILED...", error);
-        setSucess(false);
-        setLoading(false);
-      }
-    );
+    emailjs
+      .send("service_dez62dm", "template_73aayf3", values, "vRPeubQbjqke4IyjA")
+      .then(
+        (response) => {
+          console.log("SUCCESS", response);
+          setSucess(true);
+          setLoading(false);
+        },
+        (error) => {
+          console.log("FAILED...", error);
+          setSucess(false);
+          setLoading(false);
+        },
+      );
   };
 
   // useEffect(() => {
@@ -138,7 +140,8 @@ const Form = () => {
             {...input}
             key={input.id}
             value={values[input.name]}
-            onChange={handleChange}></FormInput>
+            onChange={handleChange}
+          ></FormInput>
         );
       })}
       <button type="submit">Send</button>

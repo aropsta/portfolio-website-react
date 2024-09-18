@@ -24,6 +24,7 @@ html {
     background-image: $black-gradient;
   }
 }
+
 .section {
   padding: 4rem 2rem 3rem 2rem;
   display: flex;
@@ -31,6 +32,7 @@ html {
   align-items: center;
   flex-direction: column;
   text-align: center;
+
   .section-title {
     font-size: 2.5rem;
     font-weight: 700;
@@ -48,14 +50,18 @@ html {
       left: 0;
     }
   }
+
   @media (min-width: $mobile-breakpoint) {
     padding: 6rem min(12.5%, 16rem) 4rem;
+
     // padding: 6rem 12.5rem 6rem;
     .section-title {
       font-size: 3rem;
     }
   }
 }
+
+
 
 .photo-section {
   position: relative;
@@ -70,16 +76,19 @@ html {
   width: 100%;
 
   flex-direction: column;
+
   h1 {
     padding: 1rem 4rem;
     border-radius: $border-radius;
     font-size: 2.4rem;
     font-weight: 400;
     color: white;
+
     span {
       font-weight: 700;
     }
   }
+
   p {
     border-radius: $border-radius;
     padding: 1.2rem 2rem;
@@ -93,6 +102,7 @@ html {
   img {
     height: auto;
     max-width: max(50%, 20rem);
+
     @media (max-width: 280px) {
       max-width: max(50%, 10rem);
     }
@@ -110,6 +120,7 @@ html {
       font-size: 2.25rem;
       width: 50%;
     }
+
     img {
       width: min(60%, 30rem);
     }
@@ -131,7 +142,8 @@ html {
     padding: 1rem 2.5%;
     flex-direction: column;
     flex-wrap: wrap;
-    > * {
+
+    >* {
       flex: 1 1 300px;
     }
   }
@@ -140,18 +152,28 @@ html {
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
+
     h3 {
       font-size: 2rem;
       color: white;
       font-weight: 700;
       position: relative;
     }
+
     ul {
       display: flex;
       margin-block: 1.5rem;
       flex-wrap: wrap;
       grid-gap: 0.5rem;
+      align-items: center;
+
       li {
+        list-style: none;
+      }
+
+
+
+      .skill {
         list-style: none;
         font-weight: 700;
         font-size: 1.5rem;
@@ -159,17 +181,40 @@ html {
         padding: 8px 12px;
         color: $neutral-02;
         background-color: white;
+
         &:hover {
           background-color: black;
           cursor: default;
           color: $white;
         }
       }
+
+      .logos {
+        &:hover {
+          filter: invert(100%);
+          color: $white;
+        }
+
+        img {
+
+          width: 4.5rem;
+          padding: 0.2rem;
+          object-fit: cover;
+          border-radius: 5px;
+          color: $neutral-02;
+          background-color: white;
+
+
+        }
+
+      }
     }
+
     @media (min-width: $mobile-breakpoint) {
       ul {
         max-width: 65%;
         align-self: center;
+
         li {
           font-size: 1.75rem;
         }
@@ -186,9 +231,11 @@ html {
     margin-bottom: 1rem;
     padding: 2rem 0.75rem;
     border-radius: 5px;
+
     svg {
       flex-grow: 0;
       flex-shrink: 0;
+
       path {
         fill: white;
       }
@@ -199,6 +246,7 @@ html {
       flex-grow: 0;
       color: white;
     }
+
     p {
       color: white;
       font-size: $p-mobile;
@@ -207,9 +255,11 @@ html {
       flex-basis: 100%;
     }
   }
+
   .section-title {
     color: white;
   }
+
   .cta {
     border: none;
     background-color: white;
@@ -223,6 +273,7 @@ html {
     font-size: 1.2rem;
     text-decoration: none;
     color: inherit;
+
     @media (min-width: $mobile-breakpoint) {
       font-size: 1.4rem;
     }
@@ -239,15 +290,19 @@ html {
       flex-direction: row;
       grid-gap: 1rem;
     }
+
     .text-block {
       padding-inline: 1.33rem;
+
       .title {
         font-size: 1.75rem;
       }
+
       p {
         font-size: 1.4rem;
       }
     }
+
     .cta {
       padding: 0.75rem 1.5rem;
     }
@@ -259,18 +314,22 @@ html {
   background-image: url("../../public/email-pattern.png");
   background-repeat: repeat;
   background-size: 25%;
+
   .section-title {
     color: $neutral-02;
 
     margin-bottom: 2rem;
+
     &::before {
       background-color: $neutral-01;
     }
   }
+
   .description {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     p {
       font-size: $p-mobile;
       color: $neutral-02;
@@ -297,18 +356,22 @@ html {
       font-weight: 700;
       color: $neutral-02;
     }
+
     p {
       font-size: $p-mobile;
       color: $neutral-02;
       max-width: 40rem;
     }
   }
+
   .questionaire {
     margin: 2rem auto;
+
     .section-title {
       margin-bottom: 1rem;
       font-size: 2rem;
       text-align: center;
+
       &::before {
         display: none;
       }
@@ -332,11 +395,13 @@ html {
       font-family: "Revalia", cursive;
       font-size: 1.3rem;
     }
+
     .content {
       margin: 1rem auto 2rem;
       font-size: 1.3rem;
       flex: 1 1 100%;
     }
+
     &::before {
       position: absolute;
       content: "";
@@ -347,6 +412,7 @@ html {
       left: 50%;
       transform: translate(-50%, 100%);
     }
+
     button {
       position: absolute;
       background-image: url("../../public/arrow.svg");
@@ -365,8 +431,10 @@ html {
       }
     }
   }
+
   @media (min-width: $mobile-breakpoint) {
     padding-inline: 20%;
+
     .section-title {
       align-self: flex-start;
     }
@@ -376,11 +444,13 @@ html {
       padding: 0;
       margin-block: 3rem;
       grid-gap: 2rem;
+
       h3 {
         font-size: 2.25rem;
         align-self: flex-start;
         color: $neutral-02;
       }
+
       p {
         text-align: start;
         font-size: 1.5rem;
@@ -393,10 +463,12 @@ html {
       width: 100%;
       grid-gap: 2rem;
       justify-content: space-between;
+
       img {
         align-self: flex-start;
         flex: 1 1 10%;
       }
+
       p {
         text-align: start;
         font-size: 1.5rem;
@@ -404,11 +476,13 @@ html {
         max-width: 100%;
       }
     }
+
     .questionaire {
       h2 {
         font-size: 2rem;
       }
     }
+
     .question-card {
       max-width: 37rem;
       padding: 2rem 2rem 3rem;
@@ -416,9 +490,11 @@ html {
       .title {
         font-size: 1.6rem;
       }
+
       .content {
         font-size: 1.5rem;
       }
+
       button {
         transform: translate(-50%, -50%) scale(1.75);
       }
@@ -428,13 +504,17 @@ html {
 
 .my-work {
   background-image: url(../../public/beach.jpg);
+
+
   .section-title {
     color: $primary;
     margin-bottom: 1.5rem;
+
     &::before {
       display: none;
     }
   }
+
   p {
     font-size: 1.5rem;
     font-weight: 500;
@@ -443,13 +523,17 @@ html {
 
   ul {
     margin: 2rem 0;
+    width: max(60%, 40rem);
+
     li {
       list-style: none;
+
       img {
         width: 100%;
       }
     }
   }
+
   .cta {
     border: none;
     background-color: white;
@@ -470,6 +554,7 @@ html {
     background-color: black;
     color: $white;
   }
+
   @media (min-width: $mobile-breakpoint) {
     p {
       font-size: 1.75rem;
@@ -477,14 +562,51 @@ html {
   }
 }
 
+.xac {
+  display: flex;
+  flex-direction: column;
+
+
+  a {
+    img {
+      &:hover {
+        outline: 4px solid $primary;
+
+      }
+
+    }
+
+  }
+
+  .link {
+    padding: 1rem 4rem;
+    border-radius: $border-radius;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: black;
+
+    }
+
+  }
+
+
+
+}
+
 footer {
   display: flex;
   justify-content: center;
   background-color: black;
   padding: 2rem 2rem;
+
   svg path {
     fill: white;
   }
+
   a:hover {
     svg path {
       transform: scale(1.1);
